@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css"/>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="jupyter-notebooks-an-introduction" class="slide level1">
+<h1>Jupyter Notebooks: an introduction</h1>
+</section>
+<section id="what" class="slide level1">
+<h1>What</h1>
+<ul>
+<li class="fragment">Create documents combining code, equations, descriptive text, and figures in your web browser</li>
+<li class="fragment">Formerly known as IPython Notebook, Jupyter is language agnostic re-branding</li>
+<li class="fragment">Supports over 40 languages, including Python, R, Julia, and Scala</li>
+<li class="fragment">Embed interactive widgets or rich text, image, or video media</li>
+<li class="fragment"><a href="https://jupyter.org/" class="uri">https://jupyter.org/</a></li>
+</ul>
+</section>
+<section id="who" class="slide level1">
+<h1>Who</h1>
+<ul>
+<li class="fragment">Fernando Perez <a href="https://github.com/fperez">@fperez on github</a>
+<ul>
+<li class="fragment">Started IPython project in 2001 as grad student</li>
+<li class="fragment">Continues to lead project as &quot;BDFL&quot;</li>
+</ul></li>
+<li class="fragment">Large list of contributors, including a steering committee and <a href="https://github.com/ipython/ipython/wiki/IPEP-29:-Project-Governance#institutional-partners-and-funding">institutional partners</a>
+<ul>
+<li class="fragment">Sponsors include Google, Microsoft, Gordon and Betty Moore Foundation, and Alfred P Sloan Foundation (<a href="http://jupyter.org/about.html">more</a>)</li>
+</ul></li>
+<li class="fragment">Jupyter notebook is ubiquitous at PyConn, PyData, and other Python or &quot;big data&quot; conferences</li>
+</ul>
+</section>
+<section id="why" class="slide level1">
+<h1>Why</h1>
+<ul>
+<li class="fragment">Personal research
+<ul>
+<li class="fragment">Combine code, prose, and charts</li>
+<li class="fragment">Interactivity</li>
+<li class="fragment">How did I do what I did for what purpose?</li>
+</ul></li>
+<li class="fragment">Collaborative research
+<ul>
+<li class="fragment">Help explain code within groups</li>
+<li class="fragment">Publish notebooks with journal articles for near 100% reproducibility</li>
+</ul></li>
+</ul>
+</section>
+<section id="why-1" class="slide level1">
+<h1>Why</h1>
+<ul>
+<li class="fragment">Teaching
+<ul>
+<li class="fragment"><a href="https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks#entire-books-or-other-large-collections-of-notebooks-on-a-topic">Write books or guides in notebooks</a></li>
+<li class="fragment">Use <a href="https://github.com/damianavila/RISE">Reveal.js Jupyter Slideshow Extension (RISE)</a> to create slide shows
+<ul>
+<li class="fragment">See <a href="https://github.com/mcrovella/CS132-Geometric-Algorithms">example from BU Professor Mark Crovella for CS132</a></li>
+</ul></li>
+</ul></li>
+<li class="fragment">See Nature articles:
+<ul>
+<li class="fragment"><a href="http://www.nature.com/news/interactive-notebooks-sharing-the-code-1.16261">Interactive notebooks: Sharing the code</a></li>
+<li class="fragment"><a href="http://www.nature.com/news/my-digital-toolbox-ecologist-ethan-white-on-interactive-notebooks-1.16015">My digital toolbox: Ecologist Ethan White on interactive notebooks</a></li>
+<li class="fragment"><a href="http://www.nature.com/naturejobs/science/articles/10.1038/nj7493-523a">Research tools: Jump off the page</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="installation" class="slide level1">
+<h1>Installation</h1>
+<ul>
+<li class="fragment">Installation instructions are continued in the Jupyter Notebook named <code>2_installation.ipynb</code></li>
+<li class="fragment">Follow the <a href="http://jupyter.readthedocs.org/en/latest/install.html#how-to-install-jupyter-notebook">official installation instructions from the Jupyter project</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Vertical centering of slides
+        center: true,
+        // Transition style
+        transition: 'linear', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
