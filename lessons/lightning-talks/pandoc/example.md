@@ -163,3 +163,10 @@ And footnotes![^1]
 [^1]: Very convenient, but don't use these for citations
 
 Instead, use pandoc's citation format [@Macfarlane_2015]
+
+# More resources
+
+##
+
+- [Pandoc manual](http://pandoc.org/MANUAL.html)
+- The study group is having an event next Wednesday! Check our Etherpad for more details [https://public.etherpad-mozilla.org/p/BU-Pandoc](https://public.etherpad-mozilla.org/p/BU-Pandoc)
