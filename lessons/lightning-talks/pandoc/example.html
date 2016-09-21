@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Will Kearney">
+  <meta name="dcterms.date" content="2016-09-21">
+  <title>Transforming writing with pandoc</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../util/reveal.js/3.3.0/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="../../../util/reveal.js/3.3.0/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../util/reveal.js/3.3.0/css/print/pdf.css' : '../../../util/reveal.js/3.3.0/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../util/reveal.js/3.3.0/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Transforming writing with pandoc</h1>
+  <h2 class="author">Will Kearney</h2>
+  <h3 class="date">09/21/2016</h3>
+</section>
+
+<section><section id="the-problem" class="titleslide slide level1"><h1>The Problem</h1></section><section id="section" class="slide level2">
+<h1></h1>
+<h3 id="say-youre-writing-up-a-manuscript...">Say you're writing up a manuscript...</h3>
+<p>...for a journal article (or your thesis or a blog or a presentation ...), and you want to have some nice looking mathematics in it. Your choice of tool is obvious: use TeX in one of its many forms.</p>
+</section><section id="section-1" class="slide level2">
+<h1></h1>
+<h3 id="you-can-write-out-all-sorts-of-cool-math">You can write out all sorts of cool math</h3>
+</section><section id="section-2" class="slide level2">
+<h1></h1>
+<pre><code>\begin{equation}
+\frac{\partial C}{\partial t} = \nabla \cdot \left(D\nabla C\right)
+- u\cdot{} \nabla C + S(\mathbf{x},t)
+\end{equation}</code></pre>
+<p><span class="math display">\[
+\frac{\partial C}{\partial t} = \nabla \cdot \left(D\nabla C\right) -
+u\cdot{} \nabla C + S(\mathbf{x},t)
+\]</span></p>
+</section><section id="section-3" class="slide level2">
+<h1></h1>
+<p><span class="math display">\[
+\begin{aligned}
+\dot{x} &amp;= \sigma(y-x) \\
+\dot{y} &amp;= \rho x - y - xz \\
+\dot{z} &amp;= -\beta z + xy
+\end{aligned}
+\]</span></p>
+</section><section id="section-4" class="slide level2">
+<h1></h1>
+<h3 id="but-wait">But wait!</h3>
+<p>First you have to send it to your advisor (or collaborators, etc.) for comments and edits. Maybe not all of your collaborators have your skill at TeX. Maybe they would prefer using Microsoft Word's &quot;track changes&quot; to git or the like. What are you to do?</p>
+</section></section>
+<section><section id="enter-pandoc" class="titleslide slide level1"><h1>Enter pandoc</h1></section><section id="section-5" class="slide level2">
+<h1></h1>
+<h3 id="what-is-pandoc">What is pandoc?</h3>
+<p>Pandoc is a Haskell library and application which converts files between various markup formats</p>
+</section><section id="section-6" class="slide level2">
+<h1></h1>
+<h3 id="what-can-pandoc-read-and-write">What can pandoc read and write?</h3>
+</section><section id="section-7" class="slide level2">
+<h1></h1>
+<figure>
+<img src="http://pandoc.org/diagram.jpg" alt="Pandoc&#39;s input and output formats" height="500" /><figcaption>Pandoc's input and output formats</figcaption>
+</figure>
+</section><section id="section-8" class="slide level2">
+<h1></h1>
+<h3 id="how-do-i-get-pandoc">How do I get pandoc?</h3>
+<ul>
+<li>Check your package manager</li>
+<li><a href="http://pandoc.org/installing.html">Pandoc's install page</a></li>
+<li>If you are a Haskeller and want the source, use <a href="http://haskellstack.org">stack</a> (<code>stack install pandoc</code>)</li>
+</ul>
+</section><section id="section-9" class="slide level2">
+<h1></h1>
+<h3 id="how-do-i-use-pandoc">How do I use pandoc?</h3>
+<pre><code>pandoc -o example.tex example.md
+pandoc -o example.pdf example.md
+pandoc -o example.docx example.md
+pandoc -s -o example.html example.md
+pandoc -s -o example.html -t revealjs example.md</code></pre>
+</section></section>
+<section><section id="markdown" class="titleslide slide level1"><h1>Markdown</h1></section><section id="section-10" class="slide level2">
+<h1></h1>
+<h3 id="you-can-use-pandoc-to-convert-tex-to-docx">You can use pandoc to convert TeX to docx</h3>
+</section><section id="section-11" class="slide level2">
+<h1></h1>
+<h3 id="but-you-can-also-write-everything-in-markdown">But you can also write everything in Markdown</h3>
+</section><section id="section-12" class="slide level2">
+<h1></h1>
+<h3 id="a-simple-human-readable-markup-syntax">A simple, human-readable markup syntax</h3>
+<pre><code>### This is a header
+You can **bold** or *italicize*.
+[Link to things](http://pandoc.org)
+![Insert images](http://pandoc.org/diagram.jpg)
+
+- You can do lists
+- Just like this
+
+&gt; As are blockquotes
+&gt; Four score and seven years ago...</code></pre>
+</section><section id="section-13" class="slide level2">
+<h1></h1>
+<h3 id="this-is-a-header">This is a header</h3>
+<p>You can <strong>bold</strong> or <em>italicize</em>.</p>
+<p><a href="http://pandoc.org">Link to things</a></p>
+<figure>
+<img src="http://www.bu.edu/brand/files/2012/10/BU-Master-Logo.gif" alt="Insert images" /><figcaption>Insert images</figcaption>
+</figure>
+<ul>
+<li>You can do lists</li>
+<li>Just like this</li>
+</ul>
+<blockquote>
+<p>As are blockquotes. Four score and seven years ago...</p>
+</blockquote>
+</section><section id="section-14" class="slide level2">
+<h1></h1>
+<h3 id="pandoc-extends-markdown">Pandoc extends Markdown</h3>
+<pre><code>```
+This is a fenced code block
+```
+You can use raw TeX: $E=mc^2$
+
+$$
+R_{\mu \nu} - \frac{1}{2}R g_{\mu \nu} + \Lambda g_{\mu \nu}
+= \frac{8\pi G}{c^4}T_{\mu \nu}
+$$
+
+And footnotes![^1]
+
+[^1]: Very convenient, but don&#39;t use these for citations
+
+Instead, use pandoc&#39;s citation format [@Macfarlane_2015]
+</code></pre>
+</section><section id="section-15" class="slide level2">
+<h1></h1>
+<pre><code>This is a fenced code block</code></pre>
+<p>You can use raw TeX: <span class="math inline">\(E=mc^2\)</span></p>
+<p><span class="math display">\[
+R_{\mu \nu} - \frac{1}{2}R g_{\mu \nu} + \Lambda g_{\mu \nu}
+= \frac{8\pi G}{c^4}T_{\mu \nu}
+\]</span></p>
+<p>And footnotes!<a href="#/fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>Instead, use pandoc's citation format <span class="citation" data-cites="Macfarlane_2015">[@Macfarlane_2015]</span></p>
+</section></section>
+<section><section id="more-resources" class="titleslide slide level1"><h1>More resources</h1></section><section id="section-16" class="slide level2">
+<h1></h1>
+<ul>
+<li><a href="http://pandoc.org/MANUAL.html">Pandoc manual</a></li>
+<li>The study group is having an event next Wednesday! Check our Etherpad for more details <a href="https://public.etherpad-mozilla.org/p/BU-Pandoc" class="uri">https://public.etherpad-mozilla.org/p/BU-Pandoc</a></li>
+</ul>
+</section></section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Very convenient, but don't use these for citations<a href="#/fnref1">↩</a></p></li>
+</ol>
+</section>
+    </div>
+  </div>
+
+  <script src="../../../util/reveal.js/3.3.0/lib/js/head.min.js"></script>
+  <script src="../../../util/reveal.js/3.3.0/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+      math: {
+        mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+        config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+      },
+      
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../util/reveal.js/3.3.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../util/reveal.js/3.3.0/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../util/reveal.js/3.3.0/plugin/notes/notes.js', async: true },
+          { src: '../../../util/reveal.js/3.3.0/plugin/math/math.js', async: true}
+        ]
+      });
+    </script>
+    </body>
+</html>
