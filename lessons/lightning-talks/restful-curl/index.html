@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Chris Holden">
+  <meta name="dcterms.date" content="2016-09-21">
+  <title>Accessing Data Via RESTful APIs</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../util/reveal.js/3.3.0/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="../../../util/reveal.js/3.3.0/css/theme/simple.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../util/reveal.js/3.3.0/css/print/pdf.css' : '../../../util/reveal.js/3.3.0/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../../util/reveal.js/3.3.0/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Accessing Data Via RESTful APIs</h1>
+  <h2 class="author">Chris Holden</h2>
+  <h3 class="date">09/21/2016</h3>
+</section>
+
+<section><section id="some-acronyms" class="titleslide slide level1"><h1>Some acronyms</h1></section><section id="api" class="slide level2">
+<h1><a href="https://en.wikipedia.org/wiki/Application_programming_interface">API</a></h1>
+<p>Application Programming Interface</p>
+<ul>
+<li class="fragment">Defines access methods to a program, service, libraries, frameworks, etc.</li>
+<li class="fragment">Restaurant analogy
+<ul>
+<li class="fragment">Customers (users)</li>
+<li class="fragment">Chefs (service)</li>
+<li class="fragment">Wait staff (API)</li>
+</ul></li>
+</ul>
+</section><section id="rest" class="slide level2">
+<h1><a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a></h1>
+<p>Representational state transfer</p>
+<ul>
+<li class="fragment">HTTP specification
+<ul>
+<li class="fragment">POST -&gt; create</li>
+<li class="fragment">GET -&gt; retrieve</li>
+<li class="fragment">PUT -&gt; update</li>
+<li class="fragment">DELETE -&gt; delete</li>
+</ul></li>
+</ul>
+</section><section id="json" class="slide level2">
+<h1><a href="https://en.wikipedia.org/wiki/JSON">JSON</a></h1>
+<p>JavaScript Object Notation</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+  <span class="dt">&quot;email&quot;</span><span class="fu">:</span> <span class="st">&quot;production@email.com&quot;</span><span class="fu">,</span>
+  <span class="dt">&quot;first_name&quot;</span><span class="fu">:</span> <span class="st">&quot;Production&quot;</span><span class="fu">,</span>
+  <span class="dt">&quot;last_name&quot;</span><span class="fu">:</span> <span class="st">&quot;Person&quot;</span><span class="fu">,</span>
+  <span class="dt">&quot;roles&quot;</span><span class="fu">:</span> <span class="ot">[</span>
+    <span class="st">&quot;user&quot;</span><span class="ot">,</span>
+    <span class="st">&quot;production&quot;</span>
+  <span class="ot">]</span><span class="fu">,</span>
+  <span class="dt">&quot;username&quot;</span><span class="fu">:</span> <span class="st">&quot;production&quot;</span>
+<span class="fu">}</span></code></pre></div>
+</section><section id="curl" class="slide level2">
+<h1><a href="https://en.wikipedia.org/wiki/CURL">cURL</a></h1>
+<ul>
+<li class="fragment">Library and command line application</li>
+<li class="fragment">Easy way of demonstrating RESTful APIs</li>
+</ul>
+</section></section>
+<section><section id="example---github" class="titleslide slide level1"><h1>Example - <a href="https://developer.github.com/v3/">Github</a></h1></section><section id="github" class="slide level2">
+<h1>Github</h1>
+<p><a href="https://gist.github.com/caspyin/2288960">cURL tutorial with Github's API by <code>caspyin</code></a></p>
+</section><section id="get" class="slide level2">
+<h1>GET</h1>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&gt;</span> <span class="kw">curl</span> https://api.github.com/users/ceholden
+<span class="kw">{</span>
+  <span class="st">&quot;login&quot;</span>: <span class="st">&quot;ceholden&quot;</span>,
+  <span class="st">&quot;id&quot;</span>: <span class="kw">3585769</span>,
+  <span class="st">&quot;avatar_url&quot;</span>: <span class="st">&quot;https://avatars.githubusercontent.com/u/3585769?v=3&quot;</span>,
+  <span class="st">&quot;gravatar_id&quot;</span>: <span class="st">&quot;&quot;</span>,
+  <span class="st">&quot;url&quot;</span>: <span class="st">&quot;https://api.github.com/users/ceholden&quot;</span>,
+  <span class="st">&quot;html_url&quot;</span>: <span class="st">&quot;https://github.com/ceholden&quot;</span>,
+  <span class="st">&quot;followers_url&quot;</span>: <span class="st">&quot;https://api.github.com/users/ceholden/followers&quot;</span>,
+  <span class="st">&quot;following_url&quot;</span>: <span class="st">&quot;https://api.github.com/users/ceholden/following{/other_user}&quot;</span>,
+  <span class="st">&quot;gists_url&quot;</span>: <span class="st">&quot;https://api.github.com/users/ceholden/gists{/gist_id}&quot;</span>,
+  <span class="st">&quot;starred_url&quot;</span>: <span class="st">&quot;https://api.github.com/users/ceholden/starred{/owner}{/repo}&quot;</span>,
+  <span class="st">&quot;subscriptions_url&quot;</span>: <span class="st">&quot;https://api.github.com/users/ceholden/subscriptions&quot;</span>,
+  <span class="st">&quot;organizations_url&quot;</span>: <span class="st">&quot;https://api.github.com/users/ceholden/orgs&quot;</span>,
+  <span class="st">&quot;repos_url&quot;</span>: <span class="st">&quot;https://api.github.com/users/ceholden/repos&quot;</span>,
+  <span class="st">&quot;events_url&quot;</span>: <span class="st">&quot;https://api.github.com/users/ceholden/events{/privacy}&quot;</span>,
+  <span class="st">&quot;received_events_url&quot;</span>: <span class="st">&quot;https://api.github.com/users/ceholden/received_events&quot;</span>,
+  <span class="st">&quot;type&quot;</span>: <span class="st">&quot;User&quot;</span>,
+  <span class="st">&quot;site_admin&quot;</span>: <span class="kw">false</span>,
+  <span class="st">&quot;name&quot;</span>: <span class="st">&quot;Chris Holden&quot;</span>,
+  <span class="st">&quot;company&quot;</span>: <span class="st">&quot;Boston University&quot;</span>,
+  <span class="st">&quot;blog&quot;</span>: <span class="st">&quot;ceholden.github.io&quot;</span>,
+  <span class="st">&quot;location&quot;</span>: <span class="st">&quot;Boston, MA&quot;</span>,
+  <span class="st">&quot;email&quot;</span>: <span class="kw">null</span>,
+  <span class="st">&quot;hireable&quot;</span>: <span class="kw">null</span>,
+  <span class="st">&quot;bio&quot;</span>: <span class="kw">null</span>,
+  <span class="st">&quot;public_repos&quot;</span>: <span class="kw">38</span>,
+  <span class="st">&quot;public_gists&quot;</span>: <span class="kw">4</span>,
+  <span class="st">&quot;followers&quot;</span>: <span class="kw">57</span>,
+  <span class="st">&quot;following&quot;</span>: <span class="kw">26</span>,
+  <span class="st">&quot;created_at&quot;</span>: <span class="st">&quot;2013-02-13T16:02:09Z&quot;</span>,
+  <span class="st">&quot;updated_at&quot;</span>: <span class="st">&quot;2016-09-17T21:39:56Z&quot;</span>
+<span class="kw">}</span></code></pre></div>
+</section><section id="authenticate" class="slide level2">
+<h1>Authenticate</h1>
+<p>For more detailed information, you'll probably need to authenticate.</p>
+<ul>
+<li class="fragment">Simple username and password:
+<ul>
+<li class="fragment"><code>curl --user &quot;USER:PASSWORD&quot; https://api.github.com/users/USER</code></li>
+</ul></li>
+<li class="fragment">OAuth2
+<ul>
+<li class="fragment"><a href="https://github.com/settings/tokens">Create a personal access token</a></li>
+<li class="fragment"><code>curl -H &quot;Authorization: token OAUTH-TOKEN&quot; https://api.github.com/users/ceholden</code></li>
+</ul></li>
+</ul>
+</section><section id="get-1" class="slide level2">
+<h1>GET</h1>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Add the -s so we can grep the output without progress bar</span>
+<span class="kw">&gt;</span> <span class="kw">curl</span> -s -H <span class="st">&quot;Authorization: token OAUTH-TOKEN&quot;</span> https://api.github.com/users/ceholden/followers <span class="kw">|</span> <span class="kw">grep</span> <span class="st">&quot;login&quot;</span>
+    <span class="st">&quot;login&quot;</span>: <span class="st">&quot;Woodstonelee&quot;</span>,
+    <span class="st">&quot;login&quot;</span>: <span class="st">&quot;schoi-bu&quot;</span>,
+    <span class="st">&quot;login&quot;</span>: <span class="st">&quot;mwdlamini&quot;</span>,
+    <span class="st">&quot;login&quot;</span>: <span class="st">&quot;sw-rifai&quot;</span>,
+    <span class="st">&quot;login&quot;</span>: <span class="st">&quot;xjtang&quot;</span>,
+    <span class="st">&quot;login&quot;</span>: <span class="st">&quot;valpasq&quot;</span>,
+    <span class="st">&quot;login&quot;</span>: <span class="st">&quot;parevalo&quot;</span>,
+<span class="kw">...</span></code></pre></div>
+</section></section>
+<section><section id="example---usgs-eros-data-centers-espa-api" class="titleslide slide level1"><h1>Example - USGS EROS Data Center's ESPA API</h1></section><section id="espa-api" class="slide level2">
+<h1><a href="https://github.com/USGS-EROS/espa-api">ESPA API</a></h1>
+<p>Following examples on https://github.com/USGS-EROS/espa-api</p>
+<p>Need USGS account to follow along. Create on here: https://ers.cr.usgs.gov/register/</p>
+</section><section id="check-user-status" class="slide level2">
+<h1>Check user status</h1>
+<p><code>GET /api/v0/user</code></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&gt;</span> <span class="kw">curl</span> --user username:password https://espa.cr.usgs.gov/api/v0/user
+<span class="kw">{</span>
+  <span class="st">&quot;email&quot;</span>: <span class="st">&quot;production@email.com&quot;</span>,
+  <span class="st">&quot;first_name&quot;</span>: <span class="st">&quot;Production&quot;</span>,
+  <span class="st">&quot;last_name&quot;</span>: <span class="st">&quot;Person&quot;</span>,
+  <span class="st">&quot;roles&quot;</span>:<span class="kw"> [</span>
+    <span class="st">&quot;user&quot;</span>,
+    <span class="st">&quot;production&quot;</span>
+  ],
+  <span class="st">&quot;username&quot;</span>: <span class="st">&quot;production&quot;</span>
+}</code></pre></div>
+</section><section id="available-products" class="slide level2">
+<h1>Available products</h1>
+<p><code>GET /api/v0/available-products/&lt;product_id&gt;</code></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&gt;</span> <span class="kw">curl</span> --get --user username:password https://espa.cr.usgs.gov/api/v0/available-products/LE70290302003123EDC00
+<span class="kw">{</span>
+    <span class="st">&quot;etm7&quot;</span>: <span class="kw">{</span>
+        <span class="st">&quot;inputs&quot;</span>:<span class="kw"> [</span>
+            <span class="st">&quot;LE70290302003123EDC00&quot;</span>
+        ],
+        <span class="st">&quot;products&quot;</span>: [
+            <span class="st">&quot;source_metadata&quot;</span>,
+            <span class="st">&quot;l1&quot;</span>,
+            <span class="st">&quot;toa&quot;</span>,
+            <span class="st">&quot;bt&quot;</span>,
+            <span class="st">&quot;cloud&quot;</span>,
+            <span class="st">&quot;sr&quot;</span>,
+            <span class="st">&quot;lst&quot;</span>,
+            <span class="st">&quot;swe&quot;</span>,
+            <span class="st">&quot;sr_ndvi&quot;</span>,
+            <span class="st">&quot;sr_evi&quot;</span>,
+            <span class="st">&quot;sr_savi&quot;</span>,
+            <span class="st">&quot;sr_msavi&quot;</span>,
+            <span class="st">&quot;sr_ndmi&quot;</span>,
+            <span class="st">&quot;sr_nbr&quot;</span>,
+            <span class="st">&quot;sr_nbr2&quot;</span>,
+            <span class="st">&quot;stats&quot;</span>
+       <span class="kw"> ]</span>
+    <span class="kw">}</span>
+<span class="kw">}</span></code></pre></div>
+</section><section id="check-your-orders" class="slide level2">
+<h1>Check your orders</h1>
+<p><code>GET /api/v0/list-orders/&lt;email&gt;</code></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&gt;</span> <span class="kw">curl</span> --user username:password https://espa.cr.usgs.gov/api/v0/list-orders
+<span class="kw">{</span>
+  <span class="st">&quot;orders&quot;</span>:<span class="kw"> [</span>
+    <span class="st">&quot;production@email.com-101015143201-00132&quot;</span>,
+    <span class="st">&quot;production@email.com-101115143201-00132&quot;</span>
+ <span class="kw"> ]</span>
+<span class="kw">}</span></code></pre></div>
+</section><section id="order-data" class="slide level2">
+<h1>Order data</h1>
+<p><code>POST /api/v0/order</code></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">curl</span> --user username:password -d <span class="st">&#39;{&quot;olitirs8&quot;: {</span>
+<span class="st">                                                    &quot;inputs&quot;: [&quot;LC8027029201533LGN00&quot;],</span>
+<span class="st">                                                    &quot;products&quot;: [&quot;sr&quot;]</span>
+<span class="st">                                                 },</span>
+<span class="st">...</span>
+<span class="st">                                     https://espa.cr.usgs.gov/api/v0/order</span>
+
+<span class="st">{</span>
+<span class="st"> &quot;orderid&quot;: &quot;production@email.com-101015143201-00132&quot;</span>
+<span class="st">}</span></code></pre></div>
+</section><section id="espa-api---build-a-client-on-top-of-api" class="slide level2">
+<h1>ESPA API - Build a client on top of API</h1>
+<p>Currently building Python library and CLI for interacting with ESPA API using <code>requests</code> library: <a href="https://github.com/ceholden/espa-api-client">here</a></p>
+</section><section id="espa-api-client" class="slide level2">
+<h1>ESPA API Client</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> espa_api_client.espa <span class="im">import</span> ESPA_API
+
+api <span class="op">=</span> ESPA_API(<span class="st">&#39;user&#39;</span>, <span class="st">&#39;password&#39;</span>)</code></pre></div>
+</section><section id="espa-api-client-1" class="slide level2">
+<h1>ESPA API Client</h1>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&gt;</span> <span class="kw">espa</span>
+<span class="kw">Usage</span>: espa [OPTIONS] COMMAND [ARGS]...
+
+  <span class="kw">ESPA</span> API CLI
+
+<span class="kw">Options</span>:
+  <span class="kw">--version</span>        Show the version and exit.
+  <span class="kw">-v</span>, --verbose    Be verbose
+  <span class="kw">-q</span>, --quiet      Ignore warnings
+  <span class="kw">--user</span> TEXT      USGS ESPA username
+  <span class="kw">--password</span> TEXT  USGS ESPA password
+  <span class="kw">-h</span>, --help       Show this message and exit.
+
+<span class="kw">Commands</span>:
+  <span class="kw">info</span>    Return information for ESPA system
+  <span class="kw">orders</span>  Return information for ESPA orders</code></pre></div>
+</section><section id="espa-api-client-2" class="slide level2">
+<h1>ESPA API Client</h1>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&gt;</span> <span class="kw">espa</span> -q info user
+{<span class="st">&#39;email&#39;</span>: <span class="st">&#39;cholden888@gmail.com&#39;</span>,
+ <span class="st">&#39;first_name&#39;</span>: <span class="st">&#39;Chris&#39;</span>,
+ <span class="st">&#39;last_name&#39;</span>: <span class="st">&#39;Holden&#39;</span>,
+ <span class="st">&#39;roles&#39;</span>: [<span class="st">&#39;active&#39;</span>],
+ <span class="st">&#39;username&#39;</span>: <span class="st">&#39;cholden888&#39;</span>}</code></pre></div>
+</section><section id="espa-api-client-3" class="slide level2">
+<h1>ESPA API Client</h1>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">espa</span> -q orders list bullocke@bu.edu
+[<span class="st">&#39;bullocke@bu.edu-0101606083446&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-0101606083601&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-0101608100639&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-0101608100649&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-03082016-085836&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-08212014-105953&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-08212014-110946&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-08252014-111657&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-08252014-134532&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-08252014-145839&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-09112014-104944&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-09122014-083954&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-09262014-140840&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-10092014-102317&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-11042014-125733&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-11112014-120710&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-11112014-130232&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-11182014-114529&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-11192014-072402&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-11262014-085320&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-12012014-105506&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-12022014-095125&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-12042014-074815&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-12052014-104934&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-12102014-083958&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-12102014-084027&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-12162014-095504&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-01052015-105149&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-01062015-123536&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-01072015-083228&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-01072015-101950&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-01092015-103325&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-01132015-090841&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-01152015-090006&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-01152015-091516&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-01152015-093029&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-01152015-093701&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-01202015-153300&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-01202015-154347&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-02172015-134130&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-03032015-141646&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-03182015-151529&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-03232015-113804&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-05152015-153445&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-05192015-113151&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-05202015-123313&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-05212015-084518&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-05212015-085613&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-05222015-113221&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-05282015-130738&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-06092015-161953&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-06092015-162109&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-06092015-162655&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-06162015-094211&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-06182015-193320&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-06182015-192126&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-06182015-194928&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-07012015-095807&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-07012015-093149&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-07012015-093740&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-07012015-100719&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-07012015-102811&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-07012015-105729&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-07012015-111157&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-07012015-112043&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-07012015-112532&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-07012015-112802&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-07212015-081204&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-07242015-140124&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-07282015-083210&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-0101507290004&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-07302015-145151&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-08052015-130939&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-08112015-181024&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-08112015-181745&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-08132015-110635&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-09292015-191237&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-09302015-100440&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-09302015-100046&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-10062015-163309&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-10062015-104827&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-10062015-164500&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-09292015-191308&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-10132015-123932&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-10162015-100752&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-10172015-091206&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-10162015-100959&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-10142015-164958&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-10132015-124144&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-10132015-124307&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-10162015-100852&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-01122016-135142&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-01252016-193204&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-01292016-141230&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-02152016-184717&#39;</span>,
+ <span class="st">&#39;bullocke@bu.edu-02192016-094532&#39;</span>]</code></pre></div>
+</section><section id="espa-api-client-4" class="slide level2">
+<h1>ESPA API Client</h1>
+<p>More functionality coming... sometime.</p>
+<ul>
+<li class="fragment">Find available products for a Landsat ID</li>
+<li class="fragment">Put in an order for a product
+<ul>
+<li class="fragment">Ease of use: specify EPSG code for projection, etc.</li>
+</ul></li>
+<li class="fragment">Check up on data orders</li>
+<li class="fragment">Download</li>
+<li class="fragment">Above functionality will facilitate &quot;near real time&quot; ordering system via <code>cron</code> job</li>
+</ul>
+</section></section>
+<section><section id="references" class="titleslide slide level1"><h1>References</h1></section><section id="python" class="slide level2">
+<h1>Python</h1>
+<p><a href="http://docs.python-requests.org/en/master/">requests</a></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> r <span class="op">=</span> requests.get(<span class="st">&#39;https://api.github.com/user&#39;</span>, auth<span class="op">=</span>(<span class="st">&#39;user&#39;</span>, <span class="st">&#39;pass&#39;</span>))
+<span class="op">&gt;&gt;&gt;</span> r.status_code
+<span class="dv">200</span>
+<span class="op">&gt;&gt;&gt;</span> r.headers[<span class="st">&#39;content-type&#39;</span>]
+<span class="co">&#39;application/json; charset=utf8&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> r.encoding
+<span class="co">&#39;utf-8&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> r.text
+<span class="co">u&#39;{&quot;type&quot;:&quot;User&quot;...&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> r.json()
+{<span class="st">u&#39;private_gists&#39;</span>: <span class="dv">419</span>, <span class="st">u&#39;total_private_repos&#39;</span>: <span class="dv">77</span>, ...}</code></pre></div>
+</section><section id="r" class="slide level2">
+<h1>R</h1>
+<p><a href="https://cran.r-project.org/web/packages/jsonlite/vignettes/json-apis.html">jsonlite</a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">library</span>(jsonlite)
+&gt;<span class="st"> </span>hadley_orgs &lt;-<span class="st"> </span><span class="kw">fromJSON</span>(<span class="st">&quot;https://api.github.com/users/hadley/orgs&quot;</span>)
+&gt;<span class="st"> </span>hadley_repos &lt;-<span class="st"> </span><span class="kw">fromJSON</span>(<span class="st">&quot;https://api.github.com/users/hadley/repos&quot;</span>)
+&gt;<span class="st"> </span>gg_commits &lt;-<span class="st"> </span><span class="kw">fromJSON</span>(<span class="st">&quot;https://api.github.com/repos/hadley/ggplot2/commits&quot;</span>)
+&gt;<span class="st"> </span>gg_issues &lt;-<span class="st"> </span><span class="kw">fromJSON</span>(<span class="st">&quot;https://api.github.com/repos/hadley/ggplot2/issues&quot;</span>)
+&gt;<span class="st"> </span><span class="kw">paste</span>(<span class="kw">format</span>(gg_issues$user$login), <span class="st">&quot;:&quot;</span>, gg_issues$title)
+
+[<span class="dv">1</span>] <span class="st">&quot;aphalo            : Changed stacking order&quot;</span>                                                              
+[<span class="dv">2</span>] <span class="st">&quot;Ax3man            : geom_hex no longer recognizes ..count..&quot;</span>                                             
+[<span class="dv">3</span>] <span class="st">&quot;ironv             : geom_dotplot dot layout with groups&quot;</span></code></pre></div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../../util/reveal.js/3.3.0/lib/js/head.min.js"></script>
+  <script src="../../../util/reveal.js/3.3.0/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Transition style
+        transition: 'linear', // none/fade/slide/convex/concave/zoom
+
+      math: {
+        mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+        config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+      },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../../util/reveal.js/3.3.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../../util/reveal.js/3.3.0/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../../util/reveal.js/3.3.0/plugin/notes/notes.js', async: true },
+          { src: '../../../util/reveal.js/3.3.0/plugin/math/math.js', async: true}
+        ]
+      });
+    </script>
+    </body>
+</html>
