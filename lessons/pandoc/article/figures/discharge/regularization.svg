@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="3.5in"
+   height="5in"
+   viewBox="0 0 315 449.99999"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="regularization.svg">
+  <defs
+     id="defs4">
+    <clipPath
+       id="clip00">
+      <rect
+         id="rect12404"
+         height="400"
+         width="600"
+         y="0"
+         x="0" />
+    </clipPath>
+    <clipPath
+       id="clip00-0">
+      <rect
+         id="rect12746"
+         height="400"
+         width="600"
+         y="0"
+         x="0" />
+    </clipPath>
+    <clipPath
+       id="clip00-3">
+      <rect
+         id="rect3632"
+         height="400"
+         width="600"
+         y="0"
+         x="0" />
+    </clipPath>
+    <clipPath
+       id="clip00-6">
+      <rect
+         id="rect3955"
+         height="400"
+         width="600"
+         y="0"
+         x="0" />
+    </clipPath>
+    <clipPath
+       id="clip00-7">
+      <rect
+         id="rect4281"
+         height="400"
+         width="600"
+         y="0"
+         x="0" />
+    </clipPath>
+    <clipPath
+       id="clip00-36">
+      <rect
+         id="rect5028"
+         height="400"
+         width="600"
+         y="0"
+         x="0" />
+    </clipPath>
+    <clipPath
+       id="clip00-75">
+      <rect
+         id="rect5468"
+         height="400"
+         width="600"
+         y="0"
+         x="0" />
+    </clipPath>
+    <clipPath
+       id="clip00-35">
+      <rect
+         id="rect5719"
+         height="400"
+         width="600"
+         y="0"
+         x="0" />
+    </clipPath>
+    <clipPath
+       id="clip00-62">
+      <rect
+         id="rect6078"
+         height="400"
+         width="600"
+         y="0"
+         x="0" />
+    </clipPath>
+    <clipPath
+       id="clip00-9">
+      <rect
+         id="rect6332"
+         height="400"
+         width="600"
+         y="0"
+         x="0" />
+    </clipPath>
+    <clipPath
+       id="clip00-1">
+      <rect
+         id="rect6670"
+         height="400"
+         width="600"
+         y="0"
+         x="0" />
+    </clipPath>
+    <style
+       id="style4452"
+       type="text/css">
+*{stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;}
+  </style>
+    <style
+       id="style6038"
+       type="text/css">
+*{stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;}
+  </style>
+    <clipPath
+       id="clip00-356">
+      <rect
+         id="rect26126"
+         height="400"
+         width="600"
+         y="0"
+         x="0" />
+    </clipPath>
+    <clipPath
+       id="clip00-2">
+      <rect
+         id="rect26463"
+         height="400"
+         width="600"
+         y="0"
+         x="0" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="0.66128871"
+     inkscape:cy="254.7944"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1440"
+     inkscape:window-height="827"
+     inkscape:window-x="1440"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     units="in" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-602.36224)">
+    <g
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       id="g26531"
+       transform="matrix(0.525,0,0,0.525,0,842.36224)">
+      <polygon
+         id="polygon26465"
+         points="600,400 600,0 0,0 0,400 "
+         clip-path="url(#clip00-2)"
+         style="fill:#ffffff;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000" />
+      <polygon
+         id="polygon26472"
+         points="580.315,357.163 580.315,15.748 62.5219,15.748 62.5219,357.163 "
+         clip-path="url(#clip00-2)"
+         style="fill:#ffffff;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000" />
+      <g
+         id="g26479"
+         clip-path="url(#clip00-2)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26481"
+           y="308.05099"
+           x="44.3591"
+           style="font-size:12px;font-family:Arial;text-anchor:start;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">-</text>
+      </g>
+      <g
+         id="g26483"
+         clip-path="url(#clip00-2)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26485"
+           y="308.05099"
+           x="51.280602"
+           style="font-size:12px;font-family:Arial;text-anchor:start;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">5</text>
+      </g>
+      <g
+         id="g26487"
+         clip-path="url(#clip00-2)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26489"
+           y="176.737"
+           x="51.280602"
+           style="font-size:12px;font-family:Arial;text-anchor:start;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">0</text>
+      </g>
+      <g
+         id="g26491"
+         clip-path="url(#clip00-2)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26493"
+           y="45.4235"
+           x="51.280602"
+           style="font-size:12px;font-family:Arial;text-anchor:start;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">5</text>
+      </g>
+      <polyline
+         id="polyline26495"
+         points="   62.5219,357.163 62.5219,304.638 71.8252,304.638 62.5219,304.638 62.5219,173.324 71.8252,173.324 62.5219,173.324 62.5219,42.0107 71.8252,42.0107 62.5219,42.0107    62.5219,15.748    "
+         style="fill:none;stroke:#00002d;stroke-width:0.80000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1"
+         clip-path="url(#clip00-2)" />
+      <g
+         id="g26497"
+         clip-path="url(#clip00-2)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26499"
+           y="372.52802"
+           x="226.213"
+           style="font-size:12px;font-family:Arial;text-anchor:start;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">50</text>
+      </g>
+      <g
+         id="g26501"
+         clip-path="url(#clip00-2)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26503"
+           y="372.52802"
+           x="396.67401"
+           style="font-size:12px;font-family:Arial;text-anchor:start;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">100</text>
+      </g>
+      <g
+         id="g26505"
+         clip-path="url(#clip00-2)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26507"
+           y="372.52802"
+           x="570.43103"
+           style="font-size:12px;font-family:Arial;text-anchor:start;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">150</text>
+      </g>
+      <polyline
+         id="polyline26509"
+         points="   62.5219,357.163 232.803,357.163 232.803,347.86 232.803,357.163 406.559,357.163 406.559,347.86 406.559,357.163 580.315,357.163 580.315,347.86 580.315,357.163       "
+         style="fill:none;stroke:#00002d;stroke-width:0.80000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1"
+         clip-path="url(#clip00-2)" />
+      <polyline
+         id="polyline26511"
+         points="   580.315,357.163 580.315,304.638 571.012,304.638 580.315,304.638 580.315,173.324 571.012,173.324 580.315,173.324 580.315,42.0107 571.012,42.0107 580.315,42.0107    580.315,15.748    "
+         style="fill:none;stroke:#00002d;stroke-width:0.80000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1"
+         clip-path="url(#clip00-2)" />
+      <polyline
+         id="polyline26513"
+         points="   62.5219,15.748 232.803,15.748 232.803,25.0513 232.803,15.748 406.559,15.748 406.559,25.0513 406.559,15.748 580.315,15.748 580.315,25.0513 580.315,15.748       "
+         style="fill:none;stroke:#00002d;stroke-width:0.80000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1"
+         clip-path="url(#clip00-2)" />
+      <g
+         id="g26515"
+         clip-path="url(#clip00-2)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26517"
+           y="397.60001"
+           x="321.418"
+           style="font-size:16px;font-family:Arial;text-anchor:middle;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">Lag</text>
+      </g>
+      <g
+         id="g26519"
+         clip-path="url(#clip00-2)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26521"
+           y="186.45599"
+           x="14.4"
+           transform="matrix(0,-1,1,0,-172.056,200.856)"
+           style="font-size:16px;font-family:Arial;text-anchor:middle;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">Amplitude</text>
+      </g>
+      <polyline
+         id="polyline26523"
+         points="   62.5219,165.807 65.997,183.144 69.4721,188.18 72.9472,187.711 76.4224,183.576 79.8975,176.317 83.3726,168.99 86.8477,162.587 90.3228,158.895 93.798,157.105    97.2731,157.309 100.748,160.426 104.223,164.248 107.698,167.762 111.174,172.209 114.649,176.639 118.124,178.786 121.599,178.693 125.074,178.41 128.549,177.466    132.024,178.169 135.499,180.564 138.975,184.33 142.45,186.293 145.925,186.045 149.4,184.398 152.875,181.752 156.35,180.406 159.825,179.554 163.3,180.807    166.776,180.195 170.251,174.498 173.726,166.442 177.201,159.84 180.676,156.13 184.151,157.214 187.626,160.824 191.101,165.919 194.576,172.622 198.052,179.391    201.527,183.94 205.002,183.812 208.477,181.255 211.952,177.454 215.427,174.709 218.902,173.695 222.377,173.453 225.853,174.187 229.328,173.989 232.803,172.809    236.278,171.247 239.753,169.982 243.228,169.272 246.703,169.178 250.178,168.979 253.654,169.065 257.129,169.863 260.604,170.985 264.079,172.103 267.554,172.752    271.029,172.686 274.504,171.929 277.979,171.102 281.455,171.082 284.93,172.775 288.405,175.547 291.88,178.571 295.355,181.751 298.83,183.659 302.305,183.774    305.78,181.204 309.255,177.225 312.731,172.415 316.206,168.988 319.681,167.045 323.156,165.373 326.631,164.985 330.106,165.096 333.581,165.167 337.056,165.567    340.532,166.412 344.007,167.72 347.482,170.4 350.957,173.841 354.432,177.568 357.907,181.281 361.382,184.326 364.857,186.561 368.333,187.744 371.808,187.303    375.283,185.925 378.758,184.071 382.233,181.22 385.708,178.426 389.183,174.335 392.658,170.363 396.134,168.835 399.609,169.402 403.084,173.73 406.559,179.68    410.034,182.266 413.509,178.503 416.984,169.576 420.459,158.611 423.934,149.597 427.41,144.661 430.885,142.395 434.36,143.656 437.835,149.139 441.31,156.212    444.785,165.59 448.26,177.268 451.735,187.876 455.211,195.198 458.686,198.044 462.161,197.29 465.636,192.259 469.111,184.439 472.586,176.83 476.061,170.368    479.536,167.011 483.012,166.739 486.487,167.686 489.962,168.865 493.437,169.256 496.912,169.359 500.387,170.905 503.862,173.394 507.337,176.957 510.813,180.194    514.288,182.697 517.763,184.51 521.238,184.779 524.713,183.244 528.188,180.186 531.663,176.807 535.138,172.657 538.614,168.062 542.089,164.489 545.564,161.921    549.039,161.001 552.514,161.245 555.989,163.105 559.464,165.668 562.939,168.673 566.414,172.15 569.89,175.227 573.365,176.778 576.84,176.01 580.315,172.368       "
+         style="fill:none;stroke:#0099ff;stroke-width:0.80000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1"
+         clip-path="url(#clip02)" />
+    </g>
+    <g
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       id="g26194"
+       transform="matrix(0.525,0,0,0.525,0,602.36224)">
+      <polygon
+         id="polygon26128"
+         points="600,400 600,0 0,0 0,400 "
+         clip-path="url(#clip00-356)"
+         style="fill:#ffffff;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000" />
+      <polygon
+         id="polygon26135"
+         points="580.315,357.163 580.315,15.748 62.5219,15.748 62.5219,357.163 "
+         clip-path="url(#clip00-356)"
+         style="fill:#ffffff;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000" />
+      <g
+         id="g26142"
+         clip-path="url(#clip00-356)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26144"
+           y="308.05099"
+           x="44.3591"
+           style="font-size:12px;font-family:Arial;text-anchor:start;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">-</text>
+      </g>
+      <g
+         id="g26146"
+         clip-path="url(#clip00-356)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26148"
+           y="308.05099"
+           x="51.280602"
+           style="font-size:12px;font-family:Arial;text-anchor:start;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">5</text>
+      </g>
+      <g
+         id="g26150"
+         clip-path="url(#clip00-356)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26152"
+           y="176.737"
+           x="51.280602"
+           style="font-size:12px;font-family:Arial;text-anchor:start;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">0</text>
+      </g>
+      <g
+         id="g26154"
+         clip-path="url(#clip00-356)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26156"
+           y="45.4235"
+           x="51.280602"
+           style="font-size:12px;font-family:Arial;text-anchor:start;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">5</text>
+      </g>
+      <polyline
+         id="polyline26158"
+         points="   62.5219,357.163 62.5219,304.638 71.8252,304.638 62.5219,304.638 62.5219,173.324 71.8252,173.324 62.5219,173.324 62.5219,42.0107 71.8252,42.0107 62.5219,42.0107    62.5219,15.748    "
+         style="fill:none;stroke:#00002d;stroke-width:0.80000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1"
+         clip-path="url(#clip00-356)" />
+      <g
+         id="g26160"
+         clip-path="url(#clip00-356)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26162"
+           y="372.52802"
+           x="226.213"
+           style="font-size:12px;font-family:Arial;text-anchor:start;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">50</text>
+      </g>
+      <g
+         id="g26164"
+         clip-path="url(#clip00-356)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26166"
+           y="372.52802"
+           x="396.67401"
+           style="font-size:12px;font-family:Arial;text-anchor:start;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">100</text>
+      </g>
+      <g
+         id="g26168"
+         clip-path="url(#clip00-356)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26170"
+           y="372.52802"
+           x="570.43103"
+           style="font-size:12px;font-family:Arial;text-anchor:start;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">150</text>
+      </g>
+      <polyline
+         id="polyline26172"
+         points="   62.5219,357.163 232.803,357.163 232.803,347.86 232.803,357.163 406.559,357.163 406.559,347.86 406.559,357.163 580.315,357.163 580.315,347.86 580.315,357.163       "
+         style="fill:none;stroke:#00002d;stroke-width:0.80000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1"
+         clip-path="url(#clip00-356)" />
+      <polyline
+         id="polyline26174"
+         points="   580.315,357.163 580.315,304.638 571.012,304.638 580.315,304.638 580.315,173.324 571.012,173.324 580.315,173.324 580.315,42.0107 571.012,42.0107 580.315,42.0107    580.315,15.748    "
+         style="fill:none;stroke:#00002d;stroke-width:0.80000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1"
+         clip-path="url(#clip00-356)" />
+      <polyline
+         id="polyline26176"
+         points="   62.5219,15.748 232.803,15.748 232.803,25.0513 232.803,15.748 406.559,15.748 406.559,25.0513 406.559,15.748 580.315,15.748 580.315,25.0513 580.315,15.748       "
+         style="fill:none;stroke:#00002d;stroke-width:0.80000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1"
+         clip-path="url(#clip00-356)" />
+      <g
+         id="g26178"
+         clip-path="url(#clip00-356)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26180"
+           y="397.60001"
+           x="321.418"
+           style="font-size:16px;font-family:Arial;text-anchor:middle;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">Lag</text>
+      </g>
+      <g
+         id="g26182"
+         clip-path="url(#clip00-356)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <text
+           id="text26184"
+           y="186.45599"
+           x="14.4"
+           transform="matrix(0,-1,1,0,-172.056,200.856)"
+           style="font-size:16px;font-family:Arial;text-anchor:middle;fill:#00002d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">Amplitude</text>
+      </g>
+      <polyline
+         id="polyline26186"
+         points="   62.5219,40.9653 65.997,350.898 69.4721,138.712 72.9472,196.934 76.4224,191.527 79.8975,162.353 83.3726,185.062 86.8477,150.073 90.3228,159.444 93.798,161.214    97.2731,139.9 100.748,166.285 104.223,176.207 107.698,153.001 111.174,170.988 114.649,183.881 118.124,191.085 121.599,163.056 125.074,197.98 128.549,163.276    132.024,184.566 135.499,154.453 138.975,203.181 142.45,185.41 145.925,183.037 149.4,202.991 152.875,155.367 156.35,206.655 159.825,148.703 163.3,185.187    166.776,209.461 170.251,183.557 173.726,147.031 177.201,162.025 180.676,130.949 184.151,173.652 187.626,163.73 191.101,152.644 194.576,173.592 198.052,173.178    201.527,214.589 205.002,175.074 208.477,188.569 211.952,167.598 215.427,159.02 218.902,186.342 222.377,161.864 225.853,185.282 229.328,178.447 232.803,173.849    236.278,171.091 239.753,169.596 243.228,165.374 246.703,170.15 250.178,167.538 253.654,161.686 257.129,171.755 260.604,173.789 264.079,173.813 267.554,173.683    271.029,179.527 274.504,169.606 277.979,170.857 281.455,166.89 284.93,163.302 288.405,179.468 291.88,170.991 295.355,190.091 298.83,180.068 302.305,201.116    305.78,177.699 309.255,186.327 312.731,162.577 316.206,161.39 319.681,178.429 323.156,153.807 326.631,163.939 330.106,167.157 333.581,168.042 337.056,169.11    340.532,160.485 344.007,161.288 347.482,172.627 350.957,178.973 354.432,177.344 357.907,176.868 361.382,187.468 364.857,186.89 368.333,191.595 371.808,191.742    375.283,179.144 378.758,193.793 382.233,169.094 385.708,188.522 389.183,175.467 392.658,157.839 396.134,182.748 399.609,145.369 403.084,166.098 406.559,187.339    410.034,201.422 413.509,186.088 416.984,175.779 420.459,148.976 423.934,136.466 427.41,152.324 430.885,141.502 434.36,133.081 437.835,164.449 441.31,139.873    444.785,150.92 448.26,188.637 451.735,192.091 455.211,215.255 458.686,182.341 462.161,209.724 465.636,199.984 469.111,169.194 472.586,189.515 476.061,154.909    479.536,156.443 483.012,173.149 486.487,170.489 489.962,170.991 493.437,182.234 496.912,155.669 500.387,171.95 503.862,166.544 507.337,177.148 510.813,186.33    514.288,175.732 517.763,188.737 521.238,187.907 524.713,193.499 528.188,174.799 531.663,178.918 535.138,181.55 538.614,152.528 542.089,166.546 545.564,154.318    549.039,162.123 552.514,152.739 555.989,176.59 559.464,166.742 562.939,162.957 566.414,174.009 569.89,184.348 573.365,169.895 576.84,243.179 580.315,106.179       "
+         style="fill:none;stroke:#0099ff;stroke-width:0.80000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1"
+         clip-path="url(#clip02)" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker:none;enable-background:accumulate;"
+       x="2.0812206"
+       y="617.12396"
+       id="text12880"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan12882"
+         x="2.0812206"
+         y="617.12396">a</tspan></text>
+    <text
+       xml:space="preserve"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker:none;enable-background:accumulate;"
+       x="2.0812206"
+       y="848.3418"
+       id="text12884"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan12886"
+         x="2.0812206"
+         y="848.3418">b</tspan></text>
+  </g>
+</svg>
