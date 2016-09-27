@@ -1,0 +1,20 @@
+div.left {
+    padding: 0px 10px 0px 5px;
+    font-size: 16px;
+    vertical-align: top;
+    width: 465px;
+    display: inline-block;
+}
+
+div.right {
+    padding: 0px 5px 0px 10px;
+    font-size: 16px;
+    vertical-align: top;
+    width: 465px;
+    display: inline-block;
+}
+
+div.researchitem {
+    width: 960px;
+    font-size: 0px;
+}
