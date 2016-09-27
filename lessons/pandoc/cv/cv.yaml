@@ -1,0 +1,83 @@
+---
+fontsize: 12pt
+theme: banking
+color: blue
+firstname: William
+lastname: Kearney
+email: wkearn@bu.edu
+homepage: people.bu.edu/wkearn
+github: wkearn
+education:
+  - years: 2013 -- present
+    degree: Ph.D.
+    institution: Boston University
+    city: Boston, MA
+    description: Earth Sciences
+  - years: 2009 -- 2013
+    degree: B.A.
+    institution: University of Pennsylvania
+    city: Philadelphia, PA
+    description: Science, Technology and Society and Earth Science
+bibliography:
+  - suffix: prep
+    style: includes/plainyr
+    bib: bibs/inprep
+    heading: In preparation
+  - suffix: press
+    style: includes/plainyr
+    bib: bibs/inpress
+    heading: In press
+  - suffix: arts
+    style: includes/plainyr
+    bib: bibs/publications
+    heading: Peer-reviewed articles
+  - suffix: pres
+    style: includes/plainyr
+    bib: bibs/presentations
+    heading: Presentations
+articles: bibs/publications
+presentations: bibs/presentations
+inpress: bibs/inpress
+inprep: bibs/inprep
+experience:
+  - years: 2013 -- present
+    title: Research and Teaching assistant
+    employer: Boston University
+    city: Boston, MA
+teaching:
+  - semester: Summer 2016
+    course: Introduction to Unix/Bash and Introduction to Version Control
+    institution: Boston University, Open Science Study Group
+    role: Instructor
+  - semester: Spring 2016
+    course: Introduction to Hydrology (ES317)
+    institution: Boston University, Department of Earth and Environment
+    role: Teaching assistant
+  - semester: Spring 2015
+    course: Introduction to Environmental Earth Science (ES105)
+    institution: Boston University, Department of Earth and Environment
+    role: Guest lecturer
+  - semester: Fall 2015
+    course: Estuaries and Nearshore Systems (ES543)
+    institution: Boston University, Department of Earth and Environment
+    role: Teaching assistant
+  - semester: Spring 2014
+    course: Introduction to Hydrology (ES317)
+    institution: Boston University, Department of Earth and Environment
+    role: Teaching assistant
+reference:
+  - person: Sergio Fagherazzi
+    position: Associate Professor
+    email: sergio@bu.edu
+    institution: Boston University
+    address: 675 Commonwealth Avenue, Boston, MA 02215
+service:
+  - years: 2015-2016
+    position: Academic Policy Commitee, Natural Sciences Graduate Student Representative
+    institution: College of Arts and Sciences, Boston University
+  - years: 2015-2016
+    position: Graduate Student Representative
+    institution: Department of Earth and Environment, Boston University
+---
+
+    
