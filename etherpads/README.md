@@ -4,7 +4,7 @@ We are not sure how long our etherpads will exist so we decided to download them
 
 | Lesson | Etherpad | Text File | 
 | ------ | -------- | --------- | 
-| 20160602-Unix | https://etherpad.mozilla.org/BU-Unix | 20160602-BU-Unix.txt | 
+| 20160602-Unix | https://etherpad.mozilla.org/BU-Unix | [20160602-BU-Unix.txt](20160602-BU-Unix.txt) | 
 | 20160609-R-Part-1 | https://etherpad.mozilla.org/BU-R1 | 20160609-BU-R1.txt |
 | 20160616-R-Part-2 | https://etherpad.mozilla.org/BU-R2| 20160609-BU-R2.txt |
 | 20160623-Version-Control | https://etherpad.mozilla.org/BU-Version-Control | 20160623-BU-Version-Control.txt | 
