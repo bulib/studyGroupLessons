@@ -4,4 +4,4 @@ This repository hosts all the lesson for BU's Study Group. This branch is used t
 
 So far we are archiving: 
 
-+ [Etherpads](etherpads/README.md)
++ [Etherpads](etherpads/)
