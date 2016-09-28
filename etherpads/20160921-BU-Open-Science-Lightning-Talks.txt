@@ -1,0 +1,48 @@
+BU Study Group - Open Science Lightning Talks 
+
+Wednesday, September 21 from 6-7:30 in the Estin Room - 3rd Floor of the Mugar Library. Labeled Interlibrary loan on this map http://study.bu.edu/img/BU_lib_floorplans_mugar_fin5-03.png 
+
+Etherpad website: https://public.etherpad-mozilla.org/p/BU-Open-Science-Lightning-Talks
+
+Give ideas for topics to cover: 
+
+Instructors: 
+    Chris Holden (ceholden@bu.edu), Ph.D. candidate in Geography, Dept. of Earth & Environment
+    Will Kearney (wkearn@bu.edu), Ph.D. candidate Earth Science, Dept. of Earth & Environment
+    Tom Hohenstein (tah@bu.edu), Data Services Librarian, BU Libraries 
+    
+    
+Tentative Schedule: 
+    (formatted as Time - Topic / Tool / Instructor 
+    
+6:00 - 6:15 - Version Control / Git / Betsy
+6:15 - 6:30 - Literate Programming / Jupyter Notebooks / Tom
+6:30 - 6:45 - Transforming Writing / Pandoc / Will
+6:45 - 7:00 - Accessing Remote Data / CURL & APIs / Chris
+7:00 - 7:15 - Command Line / Unix / Alexey 
+7:15- 7:30 - Questions / discussion 
+
+Register  - If you'd like to join us please add your name here 
+ 
+ Tom H
+ Chris Holden
+ Eli Melaas
+ yun shen: sorry I can't go tonight due to the conflict in time with another duty
+Jean
+Mohit
+Will K.
+
+Notes
+
+Chris's presentation: https://bulib.github.io/studyGroupLessons/lessons/lightning-talks/restful-curl/
+
+Restaurant analogy: Chefs have food, but you don't necessarily want them to interact with the customers too much because they're grumpy. So you put a wait staff to do the interaction. An API gets data from the server, which has a lot of stuff going on that you might not want to see, and gives it to the customers.
+
+Betsy's presentation: https://docs.google.com/presentation/d/1epU_jVjK2NMv-rtwItkuAbQiwqAPxMltWZOAOPlqsgg/edit?usp=sharing
+
+Will's presentation: https://bulib.github.io/studyGroupLessons/lessons/lightning-talks/pandoc/example.html
+
+Tom's presentation: https://github.com/bulib/studyGroupLessons/blob/gh-pages/lessons/lightning-talks/jupyter/NCBItoBibtex.ipynb
+
+
+counter: 11 
