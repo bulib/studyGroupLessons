@@ -1,4 +1,5 @@
-# studyGroupLessons
+# studyGroupLessons - archive branch 
+
 This repository hosts all the lesson for BU's Study Group 
 
 ## Lessons from Fall 2016 
