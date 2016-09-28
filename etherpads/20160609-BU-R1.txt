@@ -1,0 +1,243 @@
+BU Study Group - Introduction to R  - Thursday, June 9 from 1-4 in Room 132, 685 Commonwealth Ave.
+URL: https://public.etherpad-mozilla.org/p/BU-R1
+
+Instructors: 
+    Alexey Shiklomanov (ashiklom@bu.edu), Ph.D. Geography, Dept. of Earth & Environment
+    Chris Holden (ceholden@bu.edu), Ph.D. Geography, Dept. of Earth & Environment
+
+Workshop Materials 
+
+	* Software:
+		* R  - https://cloud.r-project.org/ -- we recommend the latest stable release (3.3.0), but any version will work for this tutorial.
+		* Rstudio - https://www.rstudio.com/products/RStudio/#Desktop
+		* R Lesson Packages (created by Alexey) https://files.gitter.im/bulib/StudyGroup-Instruction/xzJR/install.packages.R
+	Windows Special Instructions:
+		Install "base" and "Rtools". Be sure to install the version of "Rtools" corresponding to the version of R you are using. 
+	Mac Special Instructions: 
+		Install XQuartz https://www.xquartz.org/
+	Linux (Ubuntu) Special Instructions:  
+		1. Open a terminal window
+		
+		2. Run the following command to open the apt sources list file for editing
+		sudo gedit /etc/apt/sources.list
+		
+		3. Scroll to the bottom of the file, add the following lines, and save the file.
+		
+		# R repository, from CRAN
+		deb http://cran.r-project.org/bin/linux/ubuntu xenial/
+		
+		NOTE: If you are not using Ubuntu 16.04 Xenial Xerus , replace 'xenial' with whatever version of Ubuntu you are using (e.g. 'wily' for 15.10, 'trusty' for 14.04, etc...)
+		
+		4. Run the following command to register the secure apt key
+		sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+		
+		5.  Run the following command to update your sources and install R.
+		sudo apt-get update && sudo apt-get install r-base r-base-dev
+
+	* Data : 
+		* Lesson Data: http://swcarpentry.github.io/r-novice-inflammation/r-novice-inflammation-data.zip
+		* Public Data Suggestions: 
+			* Flu Trends - https://www.google.org/flutrends/about/
+			* 
+	* Lesson: http://swcarpentry.github.io/r-novice-inflammation/
+		* Additional Challenges - https://github.com/ashiklom/r-lesson-additional-challenges
+	* Wifi:
+		* Login to BU Wifi (either "BU 802.1x" or "BU (requires VPN")
+		* If you do not have an account with BU, use BU Guest
+			* Instructions: http://www.bu.edu/tech/services/support/networks/wireless/guest/
+	* Etherpad: https://public.etherpad-mozilla.org/p/BU-R1
+	* Study Group Website:  http://study.bu.edu
+
+Sign in: Name - Affiliation - What does your data look like, or what data might you work with?
+Marci Cohen - Music Library - PDFs of music scores and associated metadata
+Will Kearney - Earth and Environment - Time series of water and nutrient flow in wetlands
+Theodora Brisimi- Electrical Engineering
+Mahtab Alam - Biomedical Engineering
+Ndidiamaka Obi- Biochemistry
+Max Kaplan - Linguistics (Phonetics/Phonology)
+Rachel Dwyer- African Studies Library
+Rama Simhadri - Biology - time series of development rates of flies
+Gabe Adugna - African Studies Library
+Estelle Sun- Accounting
+Lilian Jaimes - Political Science - individual and aggregate voting data
+Uros Kuzmanovic- Biomedical Engineering, RNA sequencing data
+Megan Potterbusch - Summer Library intern 
+Beth Restrick - African Studies Library
+holly mockovak - music library
+Edward Hines- Earth and Environment
+Meghan Thommes - Biomedical Engineering
+David Fristrom (Science & Engineering Library) - Analyzing and writing report on results of recent survey of library patrons
+Sarah Foster - Earth and Environment Dept - PhD Student
+Ning Mao - Biomedical Engineering
+Daniel Cheng - Biomedical Engineering
+Yuting Chen - Systems Engineering -PhD student
+Brian McCarthy - Mechanical Engineering
+Amy Lieberman--Education--Eye-tracking studies of language processing
+
+Questions:
+
+
+    
+Notes: Collaborative note taking
+Alt- is a shortcut for the arrow
+assigning variables is only "one time" i.e. does not hold over time
+list.files() is a list file command
+ls() to list datasets and functions
+The "concatenate" command, c(...), uses comma separators to put multiple values in a vector
+can only have number vector or character vector, can't have both number and character in a vector
+single or double quotes work for assigning characters
+read.csv(" subfolder dir/file name") to load data
+comment by #
+indexing by x [ row, col ]
+control L to clear console
+rm(x) to remove object x
+?function to open help on that function
+press "tab" to complete filename
+Commands for data.frames:
+    dim(...)-dimensions, give you the numbers of rows and columns for the file
+    colnames(...) gives you the headers of the columns
+    head(...) will show only the first six rows of "observations"
+    display data in a column: data$colname
+an example to load an file with no header: inflammation_01 <- read.csv("data/inflammation-01.csv", header=FALSE)
+header = TRUE by default when using the read.csv function
+
+R script:
+	    cmd+enter to run current line
+	    source button runs the entire file
+	
+Graphical parameters guide:
+    http://www.statmethods.net/advgraphs/parameters.html
+
+functionname <- function(inputs){
+	commands
+	return()   
+}
+
+Sticky notes: 
+	Red = stop, problem, or help
+	Green = things are going well
+
+Check out http://software-carpentry.org/ for more info on this kind of course
+Mozilla science study group at BU
+	Demonstrating computing tools, etc.
+	Teaching the fundamentals of computing including best practices
+	study.bu.edu
+
+
+Topics we covered:  
+
+RStudio is a useful tool  for programing in R
+
+Assignment of values in R: <-
+	Can also type:  Alt [+] - at the same time
+
+First step of good programming: Get organized!
+	RStudio allows you to save things to "Projects"
+Select: Project
+	Existing directory
+		Browse to the folder that your data is in
+
+Concatenate (create a vector of values)  
+	x <- c(1, 2, 3)
+	
+Rules for Vectors:
+	 Can't use numbers and characters in the same vector!
+	Programs like to deal with numeric and non-numeric data
+
+Can use any words you'd like as variable names
+
+R allows for single or double quotes, but they have to match.
+Strings are in quotes
+
+To check the type of a variable (vector, integer, character, etc.), use the "class" command. Example:
+	> x <- 5
+	> class(x)
+	[1] "numeric"
+	or
+	> x <- "hello"
+	> class(x)
+	[1] "character"
+
+New function for opening csv files:
+	read.csv()
+	Remember that the file path is a string, so use "directory/datafile
+	)
+Commands
+	dim()  
+		tells you the dimensions
+	head()
+		gives first rows of your data
+	colnames()
+		show columns
+	mean(variable[1])
+		gives the mean of column 1
+	sd(variable[1])
+		gives the standard deviation of column 1
+	colMeans()
+		Get the column means of the whole dataset (returns as a vector)
+		
+	In the console:  Crlt R removes everything from your Console
+	In the R Script: Ctrl  R it runs each line individually
+	"Source" is the term for exciting the whole script at once
+	Run just runs one line or current selection
+	
+	{} -- curly braces are used to wrap
+	
+	For help:
+		Type: ?functionName in the Console
+	
+Select "File" and then create an R script
+
+
+CHALLENGE 1: Try to take the mean of columns 3 and 5, together
+
+PLOTTING CHALLENGES: Bring up the help page for the "plot" command to help answer the following task:
+    
+    Plot a column of the inflammation dataset, and re-create the plot with the following modifications:
+	1. Change the color of the dots to "red"
+	1. Change the shape of the dots to filled circles
+	1. Plot a column as a connected line, rather than points
+	1. Increase the width of the plotted line from #4
+	1. Plot a column as a dashed blue line.
+
+Check out the site Ning found! 
+	http://www.statmethods.net/advagraphs/parameters.html
+
+
+
+
+
+    + Good examples
+    - Little too basic
+    + Good ploitting exercise
+    - Too short
+    + Discussion of functions in depth
+    - No beer
+    + Etherpad worked well
+    - Use real data
+    + Good instructor
+    - Help documentation is confusing
+    + Great sideline help
+    - No stats
+    + Pretty colors
+    - Never answered some questions
+    + Pace was good
+    - More topics covered
+    + New program
+    - Go back / review history
+    + ...but did do it when asked to
+    - Too fast
+    + Liked the Etherpad
+    - Major-specific applications might be better
+    + Email in advance was good
+    - Didn't get to apply
+
+
+Counting
+26 attendees
+
+Topics for next week:
+    - Provide a simple (but real) example of typical workflow script and functions script used to answer some question/problem
+    - Suggestions for working with time series data...specifically how to deal with NA values and periods of missing data
+    - General advise on work flow, organization, metadata and coding notes
+	

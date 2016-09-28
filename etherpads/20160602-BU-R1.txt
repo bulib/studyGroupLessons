@@ -1,0 +1,211 @@
+BU Study Group - Unix / Bash - Thursday, June 2 from 1-4 in Room 132, 685 Commonwealth Ave.
+
+Instructors: Will (wkearn@bu.edu) and Chris (ceholden@bu.edu)
+
+Workshop Materials 
+
+	* Software:
+		* Windows:
+			* Download and Install "Git Bash": https://git-scm.com/download/win
+			* Download and Install "SWCarpentryInstaller.exe": https://github.com/swcarpentry/windows-installer/releases
+		* OS X: None!
+		* Linux: None!
+	* Data : http://swcarpentry.github.io/shell-novice/shell-novice-data.zip
+	* Lesson: http://swcarpentry.github.io/shell-novice/index.html
+	* Wifi:
+		* Login to BU Wifi (either "BU 802.1x" or "BU (requires VPN")
+		* If you do not have an account with BU, use BU Guest
+			* Instructions: http://www.bu.edu/tech/services/support/networks/wireless/guest/
+	* Etherpad: https://public.etherpad-mozilla.org/p/BU-Unix
+	* Lesson: http://swcarpentry.github.io/shell-novice/
+	* SWC Lesson Videos: http://software-carpentry.org/lessons (Scroll down to "Videos" section)
+		* https://www.youtube.com/watch?v=hAHJ0xGKMBk
+	* Group at BU referenced before:  http://study.bu.edu
+
+Sign in: Name - Affiliation - What does your data look like, or what data might you work with?
+
+	* Chris Holden - Earth & Environment - Dense time series of raster data from Earth observing satellites
+	* Marci Cohen, Music Library - Music data (and I'm not sure what form that will take)
+	* Jonathan Wurtz - Large scale structure simulations
+	* Will Kearney - Earth and Environment -Time series of water and nutrient flow in wetlands
+	* Tom Hohenstein - BU Libraries - Library data 
+	* Valerie Pasquarella - Earth & Environment - Times series of satellite reflectance (Landsat)
+	* Lauren Gustainis - Speech, Language, and Hearing - TBD
+	* Ndidiamaka Obi- Protein Interactions
+	* Linnea Smith - Biology - microbial community RNA fingerprints
+	* Radost Stanimirova - Earth and Environment - time series of remote sensing 
+	* Megan Potterbusch - BU Libraries (intern) - Library data
+	* Dong Chen - System Engineering - Machine learning
+	* Angela He - BU Dept of Speech, Language & Hearing Sciences - TBD
+	* Yue Joyce Zhang - Systems Engineering - Optimal control and machine learning
+	* Jasmine Kwasa - Biomedical Engineering - EEG data)
+	* Holly Mockovak, Music Library  - building comfort level any way I can! (used to use Mail in Unix :)
+	* Conrad Hollomon - Questrom School of Business
+	* Shainen Davidson - Physics
+	* Afshin Pourmokhtarian-Earth and Environment, climate change and forest ecosystem modeling
+	* Xuanji Yu - Materials Science Engineering - Polymer
+
+Questions:
+
+
+    
+Notes: Collaborative note taking
+
+
+Sticky notes: 
+	Red = stop, problem, or help
+	Green = things are going well
+
+Check out http://software-carpentry.org/ for more info on this kind of course
+
+Unix (an Operating System)
+	The Unix Shell is great for data processing - good for automating pieces of your workflow
+	
+For learning your computer's Directory structure
+	Folders = directories
+	Directories (folders) contain files or other directories
+	
+To see "who" the computer sees you as, type: whoami
+	The terminal will return the name it knows you as
+To see the directory you are currently working in, type: pwd (pwd = print working directory)
+To see what is inside a directory, type: ls
+Change to a directory (aka folder) within the directory you are currently in, type: cd 
+
+On Windows computers the "/c/ " is for the drive that you are in
+
+Windows and Linux systems are laid out differently based on the different designs of the OS
+	Linux has a "root" directory that holds all the directories in it, which holds everything in it
+	Windows has "drives" like the c drive
+
+Hidden directories begin with a .
+	These are common to find when looking for them (command: ls -a)
+	
+The symbol ~ is read by the terminal as the root directory (can be used as a shortcut)
+
+If you label your files with year-month-day it will be easier to sort through your files
+
+TIP: Use "tab" (aka tab complete) to automatically complete directory/file names - faster, reduces human error in typing long files names
+
+Relative path - the piece of the path that takes you from the current directory to the directory you want to go to (relative to the path you started in)
+Absolute path - the whole path to the directory you are looking for (starts with User or home)
+
+Commands we covered:  
+	whoami 
+	pwd 
+	PS1=$ (to change the prompt in your unix bash terminal)
+	ls
+		ls -F (changes how directories are listed, add "/")
+		ls -s -h shows file sizes (-s) in "human readable" format (-h)
+			* Note - flags can be combined, e.g. "ls -s -h" == "ls -sh"
+		ls *name of directory you want to see the contents of without going there*
+		ls -a  (shows you what's otherwise hidden. Anything with a dot (.) in front of it is hidden to your normal viewing)
+	cd (change directory)  -- walks down the directory tree, if you don't follow it with a directory name or with .. you will end up in your home directory
+	man (manual) - doesn't work on some Windows machines
+	ctrl+l will clear your terminal to the top 
+	ctrl+c will interrupt the shell or clear (looks like ^C) - in git bash
+		command+k - on Mac
+	mkdir -- make new directory (equivalent to "New Folder")
+		mkdir -p will create multiple directories listed (i.e. mkdir -p thesis/final/figures will create all three levels)
+	nano - opens nano text editor 
+	rm - be careful  - makes whatever file you delete go away forever
+		rm -i (this is a good habit to get into so that the computer will ask you before deleting the files) 
+			-i stands for interactive
+		rm will not allow you to remove a directory **unless** you use the -r flag
+			rm -r removes directories and all contents (-r == recursive)
+			rm -rf removes directories and all contents BY FORCE (so you won't be asked to approve each removal, all files in the directory just get nuked) - basically, never use this
+	rmdir  - use to remove an empty directory, must remove any contents from the directory first before you can remove the directory
+	touch - make an empyt file 
+	mv - move files or rename
+		mv filename.txt folder/ (moves your file to another directory)
+		mv filename.txt filename2.txt (renames filename.txt as filename2.txt instead)  (./ mean current file)
+		note: mv works on both files and directories (unlike rm, where where needed to specify -r or use rmdir)
+		mv filename.txt filename2.txt -i (asks you before renaming/moving the file)
+	cat (concatenate) - simple way to see what's in a file (this will work for any text file, any kind of binary file will not make sense)
+			cat prints entire contents of file (compared to "less" and "more" which show only part of the file with options to scroll)
+	cp (copy) - copies files, e.g. cp ./file1.txt ./file1_copy.txt 
+		Can also be used for directories using -r (recursive), e.g. cp -r ./dir1/ ./dir1_copy/
+	wc (word count) returns:  lines    words    characters    filenames
+		wc -l *.pdb (gives number of lines in each of the files that end with .pdb)
+		-l (lines)
+		-w (words)
+		-c (characters)
+	> redirect (not really a command but worth adding here) 
+		example of using this: wc -l *.pdb > lengths.txt  --  this creates a file called lengths.txt that contains the length count of each file that ends with .pdb
+	less - command for reading a file (prints first part of files, waits to see if you want to scroll)
+		Exit by typing "q"
+	sort - sort output 
+		sort -k 2 filename - will sort by the second "field" 
+	head - show the first part of a file 
+		head -n 3 will show the first 3 lines of a file 
+	| pipe - send output to another program - run different commands one after another within the terminal
+	
+Additional material 
+	for filename in basilisk.dat unicorn.dat    (filename in this case is a variable)
+		- for
+		- do
+		- done
+		each time you run the loop it will do everything between "do" and "done"
+	Can also write this as:  for filename in basilisk.dat unicorn.dat; do head -n 3 $filename; done
+		
+	To run a bash script: type "bash" followed by the name of the script
+		The bash script might end in .sh but it doesn't have to in order to work
+	You can write a python script to take standard input and standard output and it will be able to be run in bash
+	If you have many steps in a workflow, you can use a bash script to pull all the scripts together.
+		Essentially, bash scripts are good as glue in a pipeline, but less good for processing data than other files
+		
+	Practical note:
+		If you have too a very large number of files in a single directory, your efficiency will be decreased, and it may be a better idea to  create more of a hierarchy structure
+		
+		
+	for datafile in *[AB].txt; do echo "working on: $datafile"; bash goostats $datafile stats-$datafile; done > log
+	
+	"<" takes in a file
+	">" outputs a file
+
+Navigating shortcuts:
+    ~ : home directory, e.g. /Users/yourname/
+    .  : current directory
+    .. : one directory up
+	
+     * : Wildcard 
+
+    Exit (for man pages, less/more) : type "q"
+	
+Good practice for file names:
+    - Keep it short
+    - Avoid spaces if at all possible (they can change the behavior of programs!)
+    - Stick to letters, numbers, dashes (-) and underscores (_)
+    - Use periods (.) at the start of name for hidden files/directories
+
+
+Feedback: 
+- A little less time doing navigating +1 
+- Windows -> newest version has bash - show ppl if they have it 
+- try to connect concepts with GUI 
+- more problems / examples to challenge students 
+- better job communicating level of the session 
+- survey of what level is at / intro on fields 
+- please type commands slower
+- more analogies like (back, save as, etc) 
+- give examples of what will be covered in the lesson to allow people to decide if they want to attend based on the exact content of the lesson
+
+
++ ether pad and software carpentry materials 
++ good to see grad students teaching : ) 
++ able to keep up with materials
++ covered lots of material (- might be good to have the class broken into two parts)
++ very helpful for beginners - able to ask questions and get help and small groups work 
++ very accessible 
++ example of standing in places  
++ good intro to unix - can we provide future help / materials 
++good use of analogies (these help connect the dots for people)
++ feeling of working with a team
++ great seeing how to solve particular problems
+
+Counting
+ - 22 ppl attended 
+ - 11 ppl stayed for bonus materials 
+ 
+
+
+	

@@ -1,0 +1,387 @@
+BU Study Group -- Introduction to R, part 2: More skills, more R
+Thursday, June 16 from 1-4 in Room 132
+Etherpad website: https://public.etherpad-mozilla.org/p/BU-R2
+
+Give ideas for topics to cover: https://github.com/bulib/studyGroup/issues/44
+
+Instructors: 
+    Alexey Shiklomanov (ashiklom@bu.edu), Ph.D. candidate in Geography, Dept. of Earth & Environment
+    Chris Holden (ceholden@bu.edu), Ph.D. candidate in Geography, Dept. of Earth & Environment
+    Will Kearney (wkearn@bu.edu), Ph.D. candidate Earth Science, Dept. of Earth & Environment
+    
+Workshop materials:
+	* Software
+		* R  - https://cloud.r-project.org/ -- we recommend the latest stable release (3.3.0), but any version will work for this tutorial.
+			* Windows -- Install "base" and "Rtools". Be sure to install the version of "Rtools" corresponding to the version of R you are using.
+			* Mac -- Install XQuartz https://www.xquartz.org/
+			* Linux (Ubuntu)
+						* Open a terminal window
+						* Run the following command to open the apt sources list file for editing:       sudo gedit /etc/apt/sources.list
+						* Add the following line to the bottom of the file and save:        deb http://cran.r-project.org/bin/linux/ubuntu xenial/
+							* NOTE: If you are not using Ubuntu 16.04 Xenial Xerus , replace 'xenial' with whatever version of Ubuntu you are using (e.g. 'wily' for 15.10, 'trusty' for 14.04, etc...)
+						* Run the following command to register the secure apt key:         sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+						* Run the following command to update your sources and install R:         sudo apt-get update && sudo apt-get install r-base r-base-dev
+		* Rstudio - https://www.rstudio.com/products/RStudio/#Desktop
+
+	* Data : 
+		* Lesson Data: http://swcarpentry.github.io/r-novice-inflammation/r-novice-inflammation-data.zip
+		* Public Data Suggestions: 
+			* Flu Trends - https://www.google.org/flutrends/about/
+			* 
+
+
+Sign-in -- Name, Affiliation, Briefly what you would like to get out of this lesson
+Marci Cohen, music library, a comfort level with R coming in as a novice
+Linnea Smith, biology, being able to analyze data
+Megan Potterbusch, BU Libraries, Library intern
+Tom Hohenstein - BU Libraries 
+Rudi Chen-Systems Engineering
+Mahtab Alam - Biomedical Engineering
+Will Kearney - Earth and Environment
+Lilian Jaimes - Political Science Department, 
+
+Uros Kuzmanovic - Biomedical Engineering
+Rama Simhadri - Biology, use stastical packages
+Edward Hines- Earth and Environment
+Theodora Brisimi- Electrical Engineering
+Brian McCarthy, Mechanical Engineering
+
+Agenda
+
+12:30 - 1:00 -- Optional help session for setup, questions, etc.
+
+1:00 - 1:50 -- Review and expanding on key points from Part 1. 
+	* Use `variable <- value` to assign a value to a variable in order to record it in memory.
+		* arrow can go either way ( <- or -> )
+		* can make a chain of variable assignments ( a <- b <- c <- 5  means a, b, and c are all 5)
+	* Objects are created on demand whenever a value is assigned to them.
+		* Variables are created on the fly (i.e. you don't have to say that x is an integer in order to assign 5 to it.)
+		* Vectors for strings can also be assigned to variables just like integers
+	* The function `dim` gives the dimensions of a data frame.
+		* Gives: number of rows and then number of columns
+		* Everything in R is a vector (to the program)
+			* therefore class returns the type of vector (ie, if class(x) returns "integer", x is an integer vector)
+	* Use `object[x, y]` to select a single element from a data frame.
+		* every row just the 6th column: dat[,6]
+		* All the data for a given row; dat[3,]
+		* Get value for a particular location in the data by index for column and row [3,6]
+	* Use `from:to` to specify a sequence that includes the indices from from to to. - Splicing 
+		* start : end
+		* example: dat[,3:5] - all rows, columns 3-5 (inclusive) 
+		* example: dat[1:6, 3:15] - rows 1-6 (inclusive), columns 3-15 (inclusive)
+
+	* All the indexing and slicing that works on data frames also works on vectors.
+	* Use `#` to add comments to programs.
+	* Use `mean`, `max`, `min` and `sd` to calculate simple statistics.
+	* Use `apply` to calculate statistics across the rows or columns of a data frame.
+		* apply(data structure, dimension over which you are applying, mean)
+			* 1 is always rows
+			* 2 is always columns
+			* 3 is always the z dimension
+		* Vector is a 1 dimensional array
+		* Matrix is 2 dimensional array
+		* Array is 3 or higher in dimensions
+	* Use `plot` to create simple visualizations.
+
+AFTER BREAK 1: ~2:05pm
+	* Define a function using `name <- function(...args...) {...body...}`.
+	* Call a function using `name(...values...)`.
+		* a function can take any vector or matrix as input - doesn't have to be a single number (assuming the commands within the function can be executed on the type of argument you give). so a mathematical function can be called on one number (which is actually a vector of length one), or a vector of 20 numbers, or a 10x12 matrix of 120 numbers, and it will perform whatever mathematical function you've defined on all of those numbers
+	* R looks for variables in the current stack frame before looking for them at the top level.
+	* Use `help(thing)` or `?thing` to view help for something.
+	* Put comments at the beginning of functions to provide help for that function.
+	* Annotate your code!
+	* Specify default values for arguments when defining a function using `name = value` in the argument list.
+	* Arguments can be passed by matching based on name, by position, or by omitting them (in which case the default value is used).
+
+Functions
+	mean ( ) - find the mean of a set 
+	sd ( ) - find the standard deviation 
+	min ( ) - find the minimum value in a set
+	max ( ) - find the maximum value in a set 
+	c ( ) - concatenate or combine 
+	apply ( ) - apply a function to dataframe by dimension (1-rows, 2-columns, 3-z) 
+	nrow ( ) - number of rows 
+	ncol ( ) - number of columns 
+	class ( ) -
+	* Functions
+		* Can take in multiple values
+		* Always output one single value
+		* Good coding practice to include 1 space around every operator. R doesn't actually care about whitespace.
+		* Arithmetic in R can be applied to any shape you want
+		* In the function(original, wrapper ="***"), we have set a default value for wrapper. If you give this function only one value, it will be used for original and only that
+	* Best practices for writing functions
+		* Use clear variables (allows for self documenting code)
+		* Add comments using #
+		* 
+Getting help
+	?function name
+	help(function name)
+	??a thing you want to do
+		eg ??optimize 
+	Best option: Google the sentence describing your problem
+
+2:00 - 2:50 -- Using `for` loops to analyze multiple datasets
+	* Use `for (variable in collection)` to process the elements of a collection one at a time.
+		* When using a for loop and you have a variable that was assigned as part of the loop, the last variable will still be available
+		* list.files allows you to include a "pattern" (which is a Regular Expression)
+	* The body of a for loop is surrounded by curly braces (`{ }`).
+	* Use `length(thing)` to determine the length of something that contains other values.
+	* Use `list.files(path = "path", pattern = "pattern", full.names = TRUE)` to create a list of files whose names match a pattern.
+
+3:00 - 3:50 -- 
+
+
+EXERCISES
+
+Given data:
+	animal <- c("m", "o", "n", "k", "e", "y")
+		2. If the first four characters are selected using the slice animal[1:4], how can we obtain the first four characters in reverse order?
+		2. What is animal[-1]? What is animal[-4]? Given those answers, explain what animal[-1:-4] does.
+		2. Use a slice of animal to create a new character vector that spells the word “eon”, i.e. c("e", "o", "n").
+
+MAKE SPACE FOR ANSWERS BELOW
+
+CHRIS:
+    1. animal[4:1]d
+
+Rama
+1. > animal[4:1]
+[1] "k" "n" "o" "m"
+2. animal[-1]
+[1] "o" "n" "k" "e" "y"
+> animal[-4]
+[1] "m" "o" "n" "e" "y"
+> animal[-1:-4]
+[1] "e" "y"
+3. a  <- c(5,2,3)
+> animal[a]
+[1] "e" "o" "n"
+4. b <- c(2:1,3:1,3:1)
+> animal[b]
+[1] "o" "m" "n" "o" "m" "n" "o" "m"
+
+
+CHALLENGE: Plot the standard deviation by column of "dat", without the first column
+
+Marci:
+> dat_sd <- apply(dat[,-1], 2, sd)
+> plot(dat_sd)
+
+Linnea:
+    plot(apply(dat[,-1],2,sd))
+
+
+CHALLENGE: Write a function called fence that takes two vectors as arguments, called original and wrapper, and returns a new vector that has the wrapper vector at the beginning and end of the original
+
+Megan:
+    fence <- function(original, wrapper){
+  new_vector <- c(wrapper, original, wrapper)
+  return(new_vector)
+}
+
+Rama
+fence <- function(input, asterisk){
+  
+  result <- c("***",input,"***")
+  print(result)
+  return(result)
+  
+Brian:
+fence <- function(original,wrapper){
+  return(c(wrapper,original,wrapper))
+}
+  
+Linnea:
+1.
+fence <- function(original,wrapper) {
+  result <- c(wrapper,original,wrapper)
+  return(result)
+}
+
+2.
+outside <- function(x) {
+  result <- x[c(1,length(x))]
+  return(result)
+}
+
+Rama
+outside <- function(input){
+  
+  result <- c(input[1],input[length(input)])
+  return(result)
+}
+
+Megan
+analyze <- function(filename){
+  files <- read.csv(filename)
+  plot(apply(files,2,mean))
+  plot(apply(files,2,min))
+  plot(apply(files,2,max))
+  return(dim(files))
+}
+
+
+analyze <- function(filename) {
+  file <- read.csv(filename,header=FALSE)
+  min <- apply(file,2,min)
+  max <- apply(file,2,max)
+  mean <- apply(file,2,mean)
+  plot(min)
+  plot(max)
+  plot(mean)
+}
+
+analyze <- function(filename){
+  data_to_analyze <- read.csv(filename)
+# plot mean over time
+  plot(apply(data_to_analyze, 2, mean))
+# plot minimum over time
+  plot(apply(data_to_analyze, 2, min))
+# plot maximum over time
+  plot(apply(data_to_analyze, 2, max))
+}
+
+Rama
+analyze <- function(csvfilename){
+  
+  dat <- read.csv(csvfilename, header=FALSE)
+  average <- apply(dat,2,mean)
+  minimum <- apply(dat,2,min)
+  maximum <- apply(dat,2,max)
+  
+  plot(average)
+  lines(minimum)
+  lines(maximum)
+  
+  return()
+}
+
+rescale <- function(inputvector){
+  
+  vectormin <- min(inputvector)
+  vectormax <- max(inputvector)
+  rescaledvector <- (inputvector-vectormin)/(vectormax-vectormin)
+  return(rescaledvector)
+  
+}
+
+print_N <- function(an_integer){
+  for(each in seq(an_integer)){
+    print(each)
+  }
+}
+
+Rama
+naturalnumbers <- function(number){
+  for(each in seq(number)){
+    print(each)
+  }
+}
+
+Megan
+print_N <- function(aNumber){
+  for(n in (seq(aNumber))){
+    print(n)
+  }
+}
+
+total <- function(inputvector){
+  return(sum(inputvector))
+  
+Input
++ Well explained
+- Fix the screen
++ Small group environment was good; can ask questions
+- Not enough advanced topics
++ Good exercises
+- Expected more complicated stuff, like statistics
++ Variations in different people's code and discussion
+- Uneven skill levels of group
++ Collaborative note taking
+- More advanced stuff to try on our own
++ Loops 
+- Learn more about loops
++ Nice having multiple exercises 
+- Too fast
++ Covered many useful topics
+- Keeping everyone interested
++ Sticky notes
+- Verbal ticks
++ Catering
+- Trouble focusing -- a bit bored
+Advanced topics (time-permitting):
+
+Please vote for topics you would like covered in the list below, or, if you don't see a topic you'd like to see covered, add your own. Each participant gets 3 votes. Please indicate your vote by adding a "+" to the topic. We will use the vote count to determine which topics to cover during the lesson and the order in which to cover them, but we intend to provide potentially useful references for all topics we don't cover. In addition, please feel free to add comments to any of the sections with specific suggestions, requests, questions, etc.
+
+	* Programming concepts 
+		* Control flow with basic `for` loops and logical statements (`if`, `else`)
+			* at the end of a loop, the iteration variable will have the value it was given in the last iteration of the loop
+			* Expected time: 30 - 45 minutes
+			* Votes:
+			* Comments:
+				* SWC lesson on loops in R -- http://swcarpentry.github.io/r-novice-inflammation/03-loops-R.html
+				* SWC lesson on logical statements in R -- http://swcarpentry.github.io/r-novice-inflammation/04-cond.html
+		* More on R classes -- vectors, matrices, arrays, lists, and data frames
+			* Expected time: 30 minutes
+			* Votes: 
+			* Comments:
+				* 
+		* Grouping functions (`apply`, `lapply`, `sapply`, `tapply`, `mapply`)
+			* Expected time: 45 minutes
+			* Votes:+
+			* Comments:
+				* Excellent summary of these functions in a Stack Overflow answer -- http://stackoverflow.com/questions/3505701/r-grouping-functions-sapply-vs-lapply-vs-apply-vs-tapply-vs-by-vs-aggrega
+	* Processing data
+		* Dealing with missing values  
+			* Expected time: 15 minutes
+			* Votes: 1
+			* Comments:
+				* 
+		* Working with strings -- find and replace, regular expressions, formatting output
+			* Expected time: 30 minutes
+			* Votes:
+			* Comments:
+				* 
+	* Data analysis
+		* Statistical analysis in R -- summary statistics, regression, ANOVA
+			* Expected time: 30 - 45 minutes
+			* Votes:  1+1
+			* Comments:
+				* 
+		* Basics of working with time series data
+			* Expected time: 15 - 30 minutes
+			* Votes: 
+			* Comments:
+				* 
+		* Working with big data in R using the `data.table` package
+			* Expected time: 30 - 45 minutes
+			* Votes:1+
+			* Comments:
+				* Blog post on `data.table` -- http://ashiklom.github.io/dt-tutorial/
+				* `data.table` package vignette -- https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.pdf
+		* Advanced visualizations with ggplot2
+			* Expected time: 45 minutes
+			* Votes:1
+			* Comments:
+				* Data carpentry lesson on ggplot2 -- http://www.datacarpentry.org/R-ecology-lesson/05-visualization-ggplot2.html
+	* Project management
+		* File and workflow organization
+			* Discussion of organization on Data Carpentry R ecology lesson -- http://www.datacarpentry.org/R-ecology-lesson/00-before-we-start.html
+			* Blog post about R project organization -- http://nicercode.github.io/blog/2013-05-17-organising-my-project/
+			* Expected time: 30 - 45 minutes
+			* Votes: 
+			* Comments:
+				* 
+		* Dynamic report generation with `knitr` -- i.e. how to integrate analyses directly into your manuscripts 
+			* Expected time: 30 - 45 minutes
+			* Votes: 
+			* Comments:
+				* Software Carpentry R lesson on `knitr` -- http://swcarpentry.github.io/r-novice-inflammation/07-knitr-R.html
+				* Examples of documents created with `knitr` -- http://rpubs.com/ and http://yihui.name/knitr/demo/showcase/
+
+
+
+Counting: 
+    ppl: 17
+

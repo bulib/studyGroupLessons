@@ -1,0 +1,120 @@
+BU Study Group -- Introduction to Version Control
+Thursday, June 23 from 1-4 in Room 132
+Etherpad website: https://public.etherpad-mozilla.org/p/BU-Version-Control
+
+Give ideas for topics to cover: https://github.com/bulib/studyGroup/issues/
+
+Lesson Plan: http://swcarpentry.github.io/git-novice/
+A good extra resource, Pro Git by Scott Chacon: https://git-scm.com/book/en/v2
+Easy walk-through  for making your code citable by linking your GitHub repository to Zenodo:  https://guides.github.com/activities/citable-code/
+
+If you're interested in learning more about what the instructors have been talking about: http://study.bu.edu
+
+Instructors: 
+    Will Kearney (wkearn@bu.edu), Ph.D. candidate Earth Science, Dept. of Earth & Environment
+    Chris Holden (ceholden@bu.edu), Ph.D. candidate Geography, Dept. of Earth & Environment
+    
+    
+Workshop materials:
+	* Software
+			* Windows: 
+					* Download and install Git Bash: https://git-scm.com/download/win
+			* OS X/Linux:
+					* Download and install git either from https://git-scm.com/downloads or from your package manager
+			* All users:
+					* Once you have downloaded git, open up a shell, type `git version` and press enter. You should get something like
+						$ git version
+						git version 2.8.4
+				though your version number might be different. You do want the version number to be 2.x.x rather than 1.x.x. Some default git packages
+				in Mac and Linux package managers might be a much older version. If that is the case, download git from the link above.
+				If you cannot get this to work, come to the lesson a few minutes early, and we'll help you out!
+	* Accounts
+			* You'll  want an account on Github: https://github.com. Make sure to remember which email address you use to sign up for Github, because we'll need it to configure git properly. Don't worry about the configuration just now though, we'll cover that at the beginning of the lesson. This email address will be available for everyone to see. If you would prefer to keep your email address private, follow the instructions at https://help.github.com/articles/keeping-your-email-address-private/, shoot me an email (wkearn@bu.edu) or show up a little early to the lesson, and we'll get everything sorted.
+
+Sign-in -- Name, Affiliation, Briefly what you would like to get out of this lesson
+Megan Potterbusch - Library Intern, BU libraries
+Marci Cohen, Music Library
+Theodora Brisimi, ECE
+David Fristrom, BU Libraries: Learn how to start using Git and GitHub for my R project
+Holly Mockovak, Music Library
+Angela He - Speech, Language and Hearing Sciences
+Emily Chua - Earth & Env.
+Drew Trlica -- Earth and Env.
+Tom Hohenstein - BU Libraries 
+Dong Chen -- System Engineering
+
+
+FAQ:
+	1. Q: I'm merging commits from people using a different operating system (Mac vs Windows vs Linux) and Git is confused or there are unusual characters at the end of a line.
+		2. A: Different operating systems use different symbols to denote a new line (carriage return). You can tell Git to correctly interpret these new line symbols with a configuration setting. Follow the guide here: https://help.github.com/articles/dealing-with-line-endings/#platform-all
+	1. Q: How to remove large files from my history?
+		2. A: https://help.github.com/articles/removing-files-from-a-repository-s-history/
+	1. Q: How to remove sensitive data from my history?
+		2. A: https://help.github.com/articles/remove-sensitive-data/
+
+Agenda
+
+1. What is version control and why do we want to use it?
+2. Getting started with git
+3. Tracking changes
+4. Reviewing your history
+5. .gitignore
+6. Working with remote repositories
+7. Using git for open science
+8. (If we have time) Branching and merging
+
+Notes
+Lesson 1 - Overview
+	Version control - Keep track of changes over time in the same document. Keep the changes associated with the user who made them. Git is one of many options
+	Git was designed for collaboration in large software projects, but it works in many fields
+	Git is a distributed version control system - everyone maintains all versions on their own server
+Lesson 2 - 
+	All commands in git always start with the word: git
+		e.g. the command: git version
+	Commands
+		git config --global 
+			This sets your git configuration settings for all your git repositories throughout your computer
+			e.g. git config --global user.name
+Lesson 3
+	Make a directory to be your git repository
+	Start the git with the command: git init
+		This initializes a git repository
+		Only initialize a repository once
+	Don't delete your .git/ folder once you start your project, because that will remove all your previous versions.
+Lesson 4:
+	git status
+	git add
+	git commit -m "This is my commit message"
+		You can also hit enter after typing: git commit
+		This will open the editor you set up before and you can write multi line messages here
+	git log
+		See all the commits and messages you have made/written
+	git checkout -- filename.txt
+		This will return your file to the previously commited version of the file. Be careful to only do this on purpose
+	Three places for where git keeps files
+		"Modified" area - file is created or changed
+			files will display in red
+		Staging area (where files go when you type: git add but haven't been commited)
+			Put similar files in the staging area together so that you can create a commit message that makes sense for all of them together in a more logical way.
+		Repository
+	git diff [unique commit ID] 
+		This gives you information about what is different between current directory and the previous commit (the commit that matches the ID you typed before)
+		If you are comparing two different commits you type both and see one vs another
+		git diff HEAD (shows difference between working directory and most recently saved repository)
+	touch <filename> 
+		creates an empty file
+Git is not a good tool for storing large files of any kind: e.g. images (that aren't vector files)
+	Write in an ASCII file (e.g. txt,or md,) instead of a word document for example
+	
+If you use git checkout, you change your HEAD but you retain your changes since then. Nothing is actually removed/no files are lost 
+	In order to get back to a previous HEAD that you have gone away from, you may want to note down the full key somewhere
+	It's easier to go back and look at history on GitHub than in a local git.
+
+To get the files down -- Look at lesson 9 to be certain:
+	git fetch origin master
+	git merge origin/master
+	
+
+Counting: 
+    ppl: 15
+

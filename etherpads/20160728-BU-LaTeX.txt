@@ -1,0 +1,113 @@
+BU Study Group -- Introduction to LaTeX
+
+TENTATIVE: Thursday, July 28 from 1-3 in Room 442 
+Etherpad website: https://public.etherpad-mozilla.org/p/BU-LaTeX
+
+Give ideas for topics to cover: https://github.com/bulib/studyGroup/issues/56
+
+Instructors: 
+    Chris Holden (ceholden@bu.edu), Ph.D. candidate in Geography, Dept. of Earth & Environment
+    Will Kearney (wkearn@bu.edu), Ph.D. candidate Earth Science, Dept. of Earth & Environment
+    
+Tentative Schedule: (TENTATIVE) 
+    1:00 - 1:45 - Introduction to LaTeX using ShareLaTeX (https://www.sharelatex.com/ )
+		- 1:00 -- 1:10 - What is LaTeX? Why should you use it?
+		- 1:10 -- 1:40 - The LaTeX article class. Titles, text, sections, tables, figures
+		- 1:40 -- 1:45 - The LaTeX moderncv class
+    1:45 - 2:15 - Content from the Center for Career Development They couldn't make it, unfortunately. Maybe next time!
+    1:45 - 3:00 - Time for questions and working   
+
+Register  - If you'd like to join us please add your name here 
+
+	Tom H 
+	Radost Stanimirova
+	Jasmine Kwasa
+	Drew Trlica
+	Andy Rampersaud
+	George Steinhardt
+	Chris Holden
+	Valerie Pasquarella
+	Angela He
+	
+Counting: 10 ppl
+
+Notes: 
+
+BU LIBRARY LATEX THESIS/DISSERTATION STYLE:
+    http://www.bu.edu/library/guide/theses/
+
+DOCS
+ShareLatex Documentation: https://www.sharelatex.com/learn
+	+ We will be referencing these docs during this session, and IMO they're the best single resource I've found
+StackOverflow: "Are there any comprehensive lists of Latex commands online": https://tex.stackexchange.com/questions/168164/are-there-good-comprehensive-lists-of-latex-commands-online
+
+TOPICS & DOCS:
+    + Getting started with "article" class: https://www.sharelatex.com/learn/Creating_a_document_in_LaTeX
+    + Sections and chapters: https://www.sharelatex.com/learn/Sections_and_chapters
+    + Inserting images with "\includegraphics": https://www.sharelatex.com/learn/Inserting_Images#Generating_high-res_and_low-res_images
+    + Hyperlinks: https://www.sharelatex.com/learn/Hyperlinks#Introduction
+    + Mathematical equations: https://www.sharelatex.com/learn/Mathematical_expressions
+	    + Aligning mathematical equations: https://www.sharelatex.com/learn/Aligning%20equations%20with%20amsmath
+    + Line breaks and new pages: https://www.sharelatex.com/learn/Line_breaks_and_blank_spaces
+    + Lists: https://www.sharelatex.com/learn/Lists
+    + Bibliography: https://www.sharelatex.com/learn/Bibliography_management_in_LaTeX
+    + Special characters & international language support: https://www.sharelatex.com/learn/International_language_support
+    + Management of large projects, including how to use multiple Latex files: https://www.sharelatex.com/learn/Management_in_a_large_project
+    + EndNote to BibTex:
+        * http://libguides.mit.edu/c.php?g=176170&p=1158648
+        * http://www.rhizobia.co.nz/latex/convert
+
+
+    LaTeX "big idea" separate writing from layout and design. LaTex uses a set of tags to help specify the styles you want 
+    + everything can be written in text files 
+    + meaning you can you use version control 
+
+	*     First line will be class - journals will (sometimes) provide classes for their specific format
+		* Example for a journal: Elsevier provides "elsarticle" documentclass for their journals
+	*     "%" is the comment character
+	*     Commands start with "\"
+	* Packages allow you to use different environments, e.g. input encoding package that allows you to use unicode
+		* When you install LaTeX, you get a subset of packages, may need to install others yourself
+		* You can find packages at: https://www.ctan.org/?lang=en
+	* LARGE SET of header statements in an average LaTeX file
+	* 
+
+Packages Covered 
+inputenc 
+graphicx - adds images 
+
+
+Commands 
+\title - add a title to your document 
+\author - add the author to your document 
+\date - add the date 
+\maketitle - creates a title block, that starts a new page, it will take the content from \title , \author , \date 
+\section - creates a new section, counting starts at 1 (but this can be configured) 
+\section*{ text } - the * will remove counting from the output 
+\subsection - creates a new subsection 
+\LaTeX - prints out the good looking LaTeX logo with cool typesetting 
+\includegraphics - add image to your file 
+\figure - creates figure environment http://tex.stackexchange.com/questions/2275/keeping-tables-figures-close-to-where-they-are-mentioned
+\caption 
+\begin{equation} 
+\begin{figure}
+\ref 
+
+Errors 
+Undefined control sequence - you might need to add the right package 
+
+
+To cover afterwards 
++ how to add separate files  
++ figures 
++ File organization 
++ tables 
+
+
+
+
+
+
+
+
+
