@@ -1,0 +1,29 @@
+BU Study Group - Pandoc 
+
+Wednesday, September 28  
+6:00-7:30 in the Estin Room - 3rd Floor of the Mugar Library. Labeled Interlibrary loan on this map http://study.bu.edu/img/BU_lib_floorplans_mugar_fin5-03.png 
+
+Etherpad: https://public.etherpad-mozilla.org/p/BU-Pandoc
+
+Session Leader: 
+    Will Kearney (wkearn@bu.edu), Ph.D. candidate Earth Science, Dept. of Earth & Environment
+    
+Installation instructions
+If you'd like to install pandoc on your own computer, follow the instructions at http://pandoc.org/installing.html
+I'm going to be using version 1.17.1. If you don't have the same version, everything should still work basically, but some features of pandoc might have changed between the versions (check http://pandoc.org/releases.html for details)
+
+To output pdfs from pandoc, you'll need a LaTeX installation. This can be tricky to get right, so shoot me an email (wkearn@bu.edu) if you're having trouble.
+	* Windows users: MikTeX (http://miktex.org/ ) is the recommended LaTeX distribution
+	* Mac users: MacTeX (https://tug.org/mactex/ ) works but downloads a lot of packages (so it takes a while). You could try downloading BasicTeX (https://tug.org/mactex/morepackages.html), but you'll probably have to install some additional packages for pandoc's PDF output to work out properly. If you use Homebrew, note that Homebrew doesn't like to install TeX because of how complicated it gets.
+	* Linux users: TeX Live (http://www.tug.org/texlive/ ) can usually be found in your package manager.
+
+The lesson repo is here: https://github.com/bulib/studyGroupLessons/tree/gh-pages/lessons/pandoc. `git clone git@github.com:bulib/studyGroupLessons` if you want to follow along.
+
+Register  - If you'd like to join us please add your name here 
+ 
+ Tom H
+ Minkuan Chen
+ Eli 
+ Nastia
+ Jean
+ Julia
