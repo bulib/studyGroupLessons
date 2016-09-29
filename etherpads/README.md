@@ -10,4 +10,4 @@ We are not sure how long our etherpads will exist so we decided to download them
 | 20160623-Version-Control | https://public.etherpad-mozilla.org/p/BU-Version-Control | [20160623-BU-Version-Control.txt](20160623-BU-Version-Control.txt) | 
 | 20160728-LaTeX | https://public.etherpad-mozilla.org/p/BU-LaTeX | [20160728-BU-LaTeX.txt](20160728-BU-LaTeX.txt) |
 | 20160921 | https://public.etherpad-mozilla.org/p/BU-Open-Science-Lightning-Talks | [20160921-BU-Open-Science-Lightning-Talks.txt](20160921-BU-Open-Science-Lightning-Talks.txt) | 
-| 20160928 | https://public.etherpad-mozilla.org/p/BU-Pandoc | 
+| 20160928 | https://public.etherpad-mozilla.org/p/BU-Pandoc | [20160928-BU-Pandoc.txt](20160928-BU-Pandoc.txt)
