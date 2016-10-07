@@ -3,6 +3,9 @@ This repository hosts all the lesson for BU's Study Group
 
 ## Lessons from Fall 2016 
 
+## 10/05 Jupyter Notebook 
++ An [overview of Jupyter Notebooks](https://github.com/bulib/studyGroupLessons/blob/gh-pages/lessons/20161005-jupyter/20161005-Study-Group-Jupyter-Notebooks.ipynb) by [Tom Hohenstein](https://github.com/tomhohenstein)
+
 ### 9/28 Pandoc 
 + An [indepth look at Pandoc](https://github.com/bulib/studyGroupLessons/tree/gh-pages/lessons/pandoc) by [Will Kearney](https://github.com/wkearn)
 
