@@ -5,7 +5,7 @@ This repository hosts all the lesson for BU's Study Group
 
 ## 10/19 RESTful APIs 
 
-+ A great introduction to RESTful APIs by [Joshua Klein](https://github.com/mobiusklein). You can find his PowerPoint presentation and Jupyter notebook in the repo.
++ A great introduction to RESTful APIs by [Joshua Klein](https://github.com/mobiusklein). You can find his [PowerPoint presentation](https://github.com/bulib/studyGroupLessons/tree/gh-pages/lessons/20161019-RESTful-APIs) and [Jupyter notebook](https://github.com/bulib/studyGroupLessons/blob/gh-pages/lessons/20161019-RESTful-APIs/REST%20Talk.ipynb) in the repo.
 
 ## 10/05 Jupyter Notebook 
 + An [overview of Jupyter Notebooks](https://github.com/bulib/studyGroupLessons/blob/gh-pages/lessons/20161005-jupyter/20161005-Study-Group-Jupyter-Notebooks.ipynb) by [Tom Hohenstein](https://github.com/tomhohenstein)
