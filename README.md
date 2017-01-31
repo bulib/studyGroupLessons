@@ -11,7 +11,7 @@ This repository hosts all the lesson for BU's Study Group
 + An [overview of Jupyter Notebooks](https://github.com/bulib/studyGroupLessons/blob/gh-pages/lessons/20161005-jupyter/20161005-Study-Group-Jupyter-Notebooks.ipynb) by [Tom Hohenstein](https://github.com/tomhohenstein)
 
 ### 9/28 Pandoc 
-+ An [indepth look at Pandoc](https://github.com/bulib/studyGroupLessons/tree/gh-pages/lessons/pandoc) by [Will Kearney](https://github.com/wkearn)
++ An [indepth look at Pandoc](https://github.com/bulib/studyGroupLessons/tree/gh-pages/20160928-lessons/pandoc) by [Will Kearney](https://github.com/wkearn)
 
 ### 9/21 Open Science Lightning Talks 
 + [Pandoc](https://github.com/bulib/studyGroupLessons/tree/gh-pages/lessons/20160921-lightning-talks/pandoc) by [Will Kearney](https://github.com/wkearn)
